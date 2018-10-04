@@ -2,15 +2,19 @@
 
 MainMenuState::MainMenuState(std::shared_ptr<Settings> settings, std::shared_ptr<Window> window, std::shared_ptr<ResourceHandler> resourceHandler)
 {
+	this->stateChange = "";
 	this->settings = settings;
 	this->window = window;
 	this->resourceHandler = resourceHandler;
 
 	this->itemList.push_back(std::make_shared<MenuItem>
 		(this->resourceHandler, "Start", sf::Vector2i(100, this->window->getDesktop().front().height - 300)));
+	this->itemList.at(0)->setOnSelect([this] {
+		stateChange = "PLAY";
+	});
 
 	this->itemList.push_back(std::make_shared<MenuItem>
-		(this->resourceHandler, "Setting", sf::Vector2i(100, this->window->getDesktop().front().height - 240)));
+		(this->resourceHandler, "Settings", sf::Vector2i(100, this->window->getDesktop().front().height - 240)));
 
 	this->itemList.push_back(std::make_shared<MenuItem>
 		(this->resourceHandler, "Load", sf::Vector2i(100, this->window->getDesktop().front().height - 180)));

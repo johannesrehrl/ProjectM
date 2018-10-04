@@ -12,6 +12,7 @@ int main()
 	{
 		game->update();
 		game->draw();
+		game->checkStateChange();
 	}
 
     return 0;

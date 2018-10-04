@@ -9,6 +9,7 @@
 class MainMenuState : public GameState
 {
 private:
+	std::string stateChange;
 	std::shared_ptr<Settings> settings;
 	std::shared_ptr<Window> window;
 	std::shared_ptr<ResourceHandler> resourceHandler;
@@ -20,4 +21,5 @@ public:
 	void update();
 	void handleInput();
 	void draw();
+	std::string getStateChange() { return stateChange; }
 };

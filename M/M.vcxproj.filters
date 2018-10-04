@@ -28,6 +28,9 @@
     <Filter Include="src\game\game states\main menu state">
       <UniqueIdentifier>{96ed1bfe-6c99-449e-adbf-22282c3d4190}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\game states\play state">
+      <UniqueIdentifier>{6a1df0bc-4b82-4cc5-9d9d-d6a190ad4b4a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -50,6 +53,9 @@
     </ClCompile>
     <ClCompile Include="MainMenuState.cpp">
       <Filter>src\game\game states\main menu state</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
+      <Filter>src\game\game states\play state</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +82,9 @@
     </ClInclude>
     <ClInclude Include="MainMenuState.h">
       <Filter>src\game\game states\main menu state</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>src\game\game states\play state</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

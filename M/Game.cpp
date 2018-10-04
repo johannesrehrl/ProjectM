@@ -15,7 +15,7 @@ Game::Game(std::shared_ptr<Settings> settings, std::shared_ptr<ResourceHandler> 
 	this->fpsText.setCharacterSize(20);
 	this->fpsText.setPosition(sf::Vector2f(20,20));
 
-	this->currentGameState = std::make_shared<MainMenuState>(this->settings, this->window, this->resourceHandler);
+	this->currentGameState = std::make_unique<MainMenuState>(this->settings, this->window, this->resourceHandler);
 }
 
 void Game::update()
@@ -38,6 +38,21 @@ void Game::draw()
 	
 	this->currentGameState->draw();
 	window->getWindow()->display();
+}
+
+void Game::checkStateChange()
+{
+	if (this->currentGameState->getStateChange() == "MAINMENU")
+	{
+		this->currentGameState.reset();
+		this->currentGameState = std::make_unique<MainMenuState>(this->settings, this->window, this->resourceHandler);
+	}
+
+	else if (this->currentGameState->getStateChange() == "PLAY")
+	{
+		this->currentGameState.reset();
+		this->currentGameState = std::make_unique<PlayState>(this->window, this->resourceHandler);
+	}
 }
 
 Game::~Game()
