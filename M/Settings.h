@@ -7,7 +7,7 @@ class Settings
 {
 private:
 	bool displayFps;
-	bool useVSynch;
+	bool useVSync;
 	std::ifstream loadFile;
 	std::ofstream saveFile;
 
@@ -18,6 +18,6 @@ public:
 	~Settings();
 	bool getDisplayFps() { return this->displayFps; }
 	void setDisplayFps(bool val) { displayFps = val; }
-	bool getUseVSynch() { return this->useVSynch; }
-	void setUseVSynch(bool val) { useVSynch = val; }
+	bool getUseVSynch() { return this->useVSync; }
+	void setUseVSynch(bool val) { useVSync = val; }
 };
