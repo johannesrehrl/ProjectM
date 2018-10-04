@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{e9f12fca-c121-468c-bb8a-b7bdd3dfcdea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window">
+      <UniqueIdentifier>{bc3dedbf-71ff-4681-a595-2e3031774faf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{a6eb8df0-a265-443a-9005-7b6d516e8356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\resource handler">
+      <UniqueIdentifier>{3d826802-3e11-4212-8e3c-0c0ee1bc014b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\settings">
+      <UniqueIdentifier>{b5985e37-91bd-4124-aeff-2123f2bfd2fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui objects">
+      <UniqueIdentifier>{48e3dbe2-6814-47bf-b058-ef2d98a2f115}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui objects\menu item">
+      <UniqueIdentifier>{9917c801-9f24-4513-97c7-6fbbbfc88326}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\game states">
+      <UniqueIdentifier>{169d1d57-4b16-455d-8c8d-ba8ae7b893f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\game states\main menu state">
+      <UniqueIdentifier>{96ed1bfe-6c99-449e-adbf-22282c3d4190}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Window.cpp">
+      <Filter>src\window</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="Settings.cpp">
+      <Filter>src\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceHandler.cpp">
+      <Filter>src\resource handler</Filter>
+    </ClCompile>
+    <ClCompile Include="MenuItem.cpp">
+      <Filter>src\ui objects\menu item</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuState.cpp">
+      <Filter>src\game\game states\main menu state</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Window.h">
+      <Filter>src\window</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>src\game</Filter>
+    </ClInclude>
+    <ClInclude Include="Settings.h">
+      <Filter>src\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceHandler.h">
+      <Filter>src\resource handler</Filter>
+    </ClInclude>
+    <ClInclude Include="UiObj.h">
+      <Filter>src\ui objects</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuItem.h">
+      <Filter>src\ui objects\menu item</Filter>
+    </ClInclude>
+    <ClInclude Include="GameState.h">
+      <Filter>src\game\game states</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuState.h">
+      <Filter>src\game\game states\main menu state</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
