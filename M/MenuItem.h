@@ -6,6 +6,7 @@
 class MenuItem : public UiObj
 {
 private:
+	std::shared_ptr<ResourceHandler> resourceHandler;
 	sf::Text text;
 	sf::RectangleShape rect;
 	sf::RectangleShape hitBox;

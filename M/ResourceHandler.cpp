@@ -10,6 +10,9 @@ ResourceHandler::ResourceHandler()
 	this->fontHolder.acquire("rothwell", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\rothwell.army.ttf"));
 	this->fontHolder.acquire("squares-bold", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\squares-bold.regular.otf"));
 
+	this->colorHolder["background"] = sf::Color(187, 190, 193);
+	this->colorHolder["grey"] = sf::Color(80, 80, 80);
+
 	this->actionMap["leftRelease"] = thor::Action(sf::Mouse::Left, thor::Action::ReleaseOnce);
 	this->actionMap["rightRelease"] = thor::Action(sf::Mouse::Right, thor::Action::ReleaseOnce);
 	this->actionMap["gainedFocus"] = thor::Action(sf::Event::GainedFocus);

@@ -28,7 +28,7 @@ void Game::update()
 
 void Game::draw()
 {
-	window->getWindow()->clear(sf::Color(187, 190, 193));
+	window->getWindow()->clear(this->resourceHandler->getColorHolder()["background"]);
 
 	if (settings->getDisplayFps())
 	{

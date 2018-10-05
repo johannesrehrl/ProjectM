@@ -1,11 +1,12 @@
 #include "MenuItem.h"
-#define RECT_LENGHT 80
+#define RECT_LENGTH 50
 #define RECT_TEXT_DIFF 10
-#define GREY 80,80,80
+#define MOVE_BY_SEC 400
 
 MenuItem::MenuItem(std::shared_ptr<ResourceHandler> resourceHandler, std::string text, sf::Vector2i pos)
 {
-	this->text.setFont(resourceHandler->getFontHolder()["squares-bold"]);
+	this->resourceHandler = resourceHandler;
+	this->text.setFont(this->resourceHandler->getFontHolder()["squares-bold"]);
 	this->text.setString(text);
 	this->text.setCharacterSize(40);
 	this->text.setFillColor(sf::Color::Black);
@@ -29,25 +30,25 @@ MenuItem::MenuItem(std::shared_ptr<ResourceHandler> resourceHandler, std::string
 
 void MenuItem::update(sf::Vector2i mousePos, int fps)
 {
-	if (!active && this->text.getFillColor() != sf::Color(GREY))
+	if (!active && this->text.getFillColor() != this->resourceHandler->getColorHolder()["grey"])
 	{
-		this->text.setFillColor(sf::Color(GREY));
+		this->text.setFillColor(this->resourceHandler->getColorHolder()["grey"]);
 		return;
 	} else if (!active) return;
 
 	this->hitBox.setSize(sf::Vector2f(this->rect.getSize().x + 20 + this->text.getLocalBounds().width, 50));
 	if (this->hitBox.getGlobalBounds().contains((float) mousePos.x, (float) mousePos.y))
 	{
-		if (this->rect.getSize().x < RECT_LENGHT)
+		if (this->rect.getSize().x < RECT_LENGTH)
 		{
-			this->rect.setSize(sf::Vector2f(this->rect.getSize().x + (250 / fps), this->rect.getSize().y));
-			this->text.setPosition(this->text.getPosition().x + (250 / fps), this->text.getPosition().y);
+			this->rect.setSize(sf::Vector2f(this->rect.getSize().x + (MOVE_BY_SEC / fps), this->rect.getSize().y));
+			this->text.setPosition(this->text.getPosition().x + (MOVE_BY_SEC / fps), this->text.getPosition().y);
 		}
 
-		if (this->rect.getSize().x > RECT_LENGHT)
+		if (this->rect.getSize().x > RECT_LENGTH)
 		{
-			this->rect.setSize(sf::Vector2f(RECT_LENGHT, this->rect.getSize().y));
-			this->text.setPosition(RECT_LENGHT + RECT_TEXT_DIFF, this->text.getPosition().y);
+			this->rect.setSize(sf::Vector2f(RECT_LENGTH, this->rect.getSize().y));
+			this->text.setPosition(RECT_LENGTH + posX, this->text.getPosition().y);
 		}
 
 		this->selected = true;
@@ -57,11 +58,11 @@ void MenuItem::update(sf::Vector2i mousePos, int fps)
 	{
 		if (this->rect.getSize().x > 0)
 		{
-			this->rect.setSize(sf::Vector2f(this->rect.getSize().x - (250 / fps), this->rect.getSize().y));
-			this->text.setPosition(this->text.getPosition().x - (250 / fps), this->text.getPosition().y);
+			this->rect.setSize(sf::Vector2f(this->rect.getSize().x - (MOVE_BY_SEC / fps), this->rect.getSize().y));
+			this->text.setPosition(this->text.getPosition().x - (MOVE_BY_SEC / fps), this->text.getPosition().y);
 		}
 
-		if (this->rect.getSize().x < 0)
+		if (this->rect.getSize().x < 0 || this->text.getPosition().x < posX)
 		{
 			this->rect.setSize(sf::Vector2f(0, this->rect.getSize().y));
 			this->text.setPosition(posX, this->text.getPosition().y);
