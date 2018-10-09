@@ -16,6 +16,7 @@ private:
 public:
 	Window(sf::String title, std::shared_ptr<ResourceHandler> resourceHandler);
 	~Window();
+
 	std::shared_ptr<sf::RenderWindow> getWindow() { return this->window; }
 	bool isFocused() { return focus; }
 	bool isRunning() { return this->window->isOpen(); }
