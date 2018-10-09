@@ -8,19 +8,19 @@ MainMenuState::MainMenuState(std::shared_ptr<Settings> settings, std::shared_ptr
 	this->resourceHandler = resourceHandler;
 
 	this->itemList.push_back(std::make_shared<MenuItem>
-		(this->resourceHandler, "Start", sf::Vector2i(100, this->window->getDesktop().front().height - 300)));
+		(this->resourceHandler, this->window, "Start", sf::Vector2f(100, this->window->getDesktop().front().height - 300)));
 	this->itemList.at(0)->setOnSelect([this] {
 		stateChange = "PLAY";
 	});
 
 	this->itemList.push_back(std::make_shared<MenuItem>
-		(this->resourceHandler, "Settings", sf::Vector2i(100, this->window->getDesktop().front().height - 240)));
+		(this->resourceHandler, this->window, "Settings", sf::Vector2f(100, this->window->getDesktop().front().height - 240)));
 
 	this->itemList.push_back(std::make_shared<MenuItem>
-		(this->resourceHandler, "Load", sf::Vector2i(100, this->window->getDesktop().front().height - 180)));
+		(this->resourceHandler, this->window, "Load", sf::Vector2f(100, this->window->getDesktop().front().height - 180)));
 
 	this->itemList.push_back(std::make_shared<MenuItem>(
-		this->resourceHandler, "Exit", sf::Vector2i(100, this->window->getDesktop().front().height - 120)));
+		this->resourceHandler, this->window, "Exit", sf::Vector2f(100, this->window->getDesktop().front().height - 120)));
 	this->itemList.at(3)->setOnSelect([window] {
 		window->getWindow()->close();
 	});
@@ -35,21 +35,12 @@ void MainMenuState::update()
 
 void MainMenuState::handleInput()
 {
-	if (this->resourceHandler->getActionMap().isActive("leftRelease"))
-	{
-		for (int i = 0; i < this->itemList.size(); i++)
-		{
-			if (this->itemList.at(i)->isSelected())
-			{
-				this->itemList.at(i)->fireOnSelect();
-			}
-		}
-	}
+
 }
 
 void MainMenuState::draw()
 {
-	for (int i = 0; i < this->itemList.size(); i++) { this->itemList.at(i)->draw(this->window->getWindow()); }
+	for (int i = 0; i < this->itemList.size(); i++) { this->itemList.at(i)->draw(); }
 }
 
 MainMenuState::~MainMenuState()

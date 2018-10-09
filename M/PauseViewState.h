@@ -1,21 +1,17 @@
 #pragma once
-#include "GameState.h"
+#include "ViewState.h"
 #include "Window.h"
 #include "ResourceHandler.h"
-#include "ViewState.h"
-#include "MainViewState.h"
 
-class PlayState : public GameState
+class PauseViewState : public ViewState
 {
 private:
 	std::string stateChange;
 	std::shared_ptr<Window> window;
 	std::shared_ptr<ResourceHandler> resourceHandler;
-	std::shared_ptr<ViewState> currentViewState;
-
 public:
-	PlayState(std::shared_ptr<Window> window, std::shared_ptr<ResourceHandler> resourceHandler);
-	~PlayState();
+	PauseViewState(std::shared_ptr<Window> window, std::shared_ptr<ResourceHandler> resourceHandler);
+	~PauseViewState();
 	void update();
 	void handleInput();
 	void draw();

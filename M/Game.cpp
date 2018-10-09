@@ -21,6 +21,7 @@ Game::Game(std::shared_ptr<Settings> settings, std::shared_ptr<ResourceHandler> 
 void Game::update()
 {
 	running = this->window->isRunning();
+	this->resourceHandler->getActionMap().update(*(this->window->getWindow()));
 	this->window->update();
 	this->currentGameState->update();
 	this->currentGameState->handleInput();

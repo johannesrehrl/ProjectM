@@ -16,8 +16,6 @@ void Window::update()
 	this->deltaTime = this->clock.restart().asSeconds();
 	this->fps = 1 / deltaTime;
 
-	this->resourceHandler->getActionMap().update(*(this->window));
-
 	if (this->resourceHandler->getActionMap().isActive("closedWindow")) 
 	{
 		this->window->close();

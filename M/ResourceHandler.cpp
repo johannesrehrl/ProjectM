@@ -10,11 +10,15 @@ ResourceHandler::ResourceHandler()
 	this->fontHolder.acquire("rothwell", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\rothwell.army.ttf"));
 	this->fontHolder.acquire("squares-bold", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\squares-bold.regular.otf"));
 
-	this->colorHolder["background"] = sf::Color(187, 190, 193);
-	this->colorHolder["grey"] = sf::Color(80, 80, 80);
+	this->colorHolder["background"] = sf::Color(200, 200, 200);
+	this->colorHolder["grey80"] = sf::Color(80, 80, 80);
+	this->colorHolder["grey160"] = sf::Color(160, 160, 160);
+	this->colorHolder["grey185"] = sf::Color(185, 185, 185);
+	this->colorHolder["black"] = sf::Color::Black;
 
 	this->actionMap["leftRelease"] = thor::Action(sf::Mouse::Left, thor::Action::ReleaseOnce);
 	this->actionMap["rightRelease"] = thor::Action(sf::Mouse::Right, thor::Action::ReleaseOnce);
+	this->actionMap["escapeRelease"] = thor::Action(sf::Keyboard::Escape, thor::Action::ReleaseOnce);
 	this->actionMap["gainedFocus"] = thor::Action(sf::Event::GainedFocus);
 	this->actionMap["lostFocus"] = thor::Action(sf::Event::LostFocus);
 	this->actionMap["closedWindow"] = thor::Action(sf::Event::Closed);

@@ -3,9 +3,10 @@
 #define RECT_TEXT_DIFF 10
 #define MOVE_BY_SEC 400
 
-MenuItem::MenuItem(std::shared_ptr<ResourceHandler> resourceHandler, std::string text, sf::Vector2i pos)
+MenuItem::MenuItem(std::shared_ptr<ResourceHandler> resourceHandler, std::shared_ptr<Window> window, std::string text, sf::Vector2f pos)
 {
 	this->resourceHandler = resourceHandler;
+	this->window = window;
 	this->text.setFont(this->resourceHandler->getFontHolder()["squares-bold"]);
 	this->text.setString(text);
 	this->text.setCharacterSize(40);
@@ -30,9 +31,9 @@ MenuItem::MenuItem(std::shared_ptr<ResourceHandler> resourceHandler, std::string
 
 void MenuItem::update(sf::Vector2i mousePos, int fps)
 {
-	if (!active && this->text.getFillColor() != this->resourceHandler->getColorHolder()["grey"])
+	if (!active && this->text.getFillColor() != this->resourceHandler->getColorHolder()["grey80"])
 	{
-		this->text.setFillColor(this->resourceHandler->getColorHolder()["grey"]);
+		this->text.setFillColor(this->resourceHandler->getColorHolder()["grey80"]);
 		return;
 	} else if (!active) return;
 
@@ -52,6 +53,11 @@ void MenuItem::update(sf::Vector2i mousePos, int fps)
 		}
 
 		this->selected = true;
+
+		if (this->resourceHandler->getActionMap().isActive("leftRelease"))
+		{
+			this->onSelect();
+		}
 	}
 
 	else
@@ -77,15 +83,10 @@ void MenuItem::update(sf::Vector2i mousePos, int fps)
 	}
 }
 
-void MenuItem::draw(std::shared_ptr<sf::RenderWindow> window)
+void MenuItem::draw()
 {
-	window->draw(this->text);
-	window->draw(this->rect);
-}
-
-void MenuItem::fireOnSelect()
-{
-	this->onSelect();
+	this->window->getWindow()->draw(this->text);
+	this->window->getWindow()->draw(this->rect);
 }
 
 MenuItem::~MenuItem()
