@@ -1,12 +1,12 @@
 #include "Game.h"
 #include "Settings.h"
-#include "ResourceHandler.h"
+#include "AssetsHandler.h"
 
 int main()
 {
 	std::shared_ptr<Settings> settings = std::make_shared<Settings>();
-	std::shared_ptr<ResourceHandler> resourceHandler = std::make_shared<ResourceHandler>();
-	std::shared_ptr<Game> game = std::make_shared<Game>(settings, resourceHandler);
+	std::shared_ptr<AssetsHandler> assetsHandler = std::make_shared<AssetsHandler>();
+	std::shared_ptr<Game> game = std::make_shared<Game>(settings, assetsHandler);
 
 	while (game->isRunning())
 	{

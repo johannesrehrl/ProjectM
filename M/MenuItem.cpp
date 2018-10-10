@@ -3,11 +3,11 @@
 #define RECT_TEXT_DIFF 10
 #define MOVE_BY_SEC 400
 
-MenuItem::MenuItem(std::shared_ptr<ResourceHandler> resourceHandler, std::shared_ptr<Window> window, std::string text, sf::Vector2f pos)
+MenuItem::MenuItem(std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Window> window, std::string text, sf::Vector2f pos)
 {
-	this->resourceHandler = resourceHandler;
+	this->assetsHandler = assetsHandler;
 	this->window = window;
-	this->text.setFont(this->resourceHandler->getFontHolder()["squares-bold"]);
+	this->text.setFont(this->assetsHandler->getFontHolder()["squares-bold"]);
 	this->text.setString(text);
 	this->text.setCharacterSize(40);
 	this->text.setFillColor(sf::Color::Black);
@@ -29,11 +29,11 @@ MenuItem::MenuItem(std::shared_ptr<ResourceHandler> resourceHandler, std::shared
 	this->selected = false;
 }
 
-void MenuItem::update(sf::Vector2i mousePos, int fps)
+void MenuItem::update(sf::Vector2i mousePos)
 {
-	if (!active && this->text.getFillColor() != this->resourceHandler->getColorHolder()["grey80"])
+	if (!active && this->text.getFillColor() != this->assetsHandler->getColorHolder()["grey80"])
 	{
-		this->text.setFillColor(this->resourceHandler->getColorHolder()["grey80"]);
+		this->text.setFillColor(this->assetsHandler->getColorHolder()["grey80"]);
 		return;
 	} else if (!active) return;
 
@@ -42,8 +42,8 @@ void MenuItem::update(sf::Vector2i mousePos, int fps)
 	{
 		if (this->rect.getSize().x < RECT_LENGTH)
 		{
-			this->rect.setSize(sf::Vector2f(this->rect.getSize().x + (MOVE_BY_SEC / fps), this->rect.getSize().y));
-			this->text.setPosition(this->text.getPosition().x + (MOVE_BY_SEC / fps), this->text.getPosition().y);
+			this->rect.setSize(sf::Vector2f(this->rect.getSize().x + (MOVE_BY_SEC * this->window->getDeltaTime()), this->rect.getSize().y));
+			this->text.setPosition(this->text.getPosition().x + (MOVE_BY_SEC * this->window->getDeltaTime()), this->text.getPosition().y);
 		}
 
 		if (this->rect.getSize().x > RECT_LENGTH)
@@ -54,7 +54,7 @@ void MenuItem::update(sf::Vector2i mousePos, int fps)
 
 		this->selected = true;
 
-		if (this->resourceHandler->getActionMap().isActive("leftRelease"))
+		if (this->assetsHandler->getActionMap().isActive("leftRelease"))
 		{
 			this->onSelect();
 		}
@@ -64,8 +64,8 @@ void MenuItem::update(sf::Vector2i mousePos, int fps)
 	{
 		if (this->rect.getSize().x > 0)
 		{
-			this->rect.setSize(sf::Vector2f(this->rect.getSize().x - (MOVE_BY_SEC / fps), this->rect.getSize().y));
-			this->text.setPosition(this->text.getPosition().x - (MOVE_BY_SEC / fps), this->text.getPosition().y);
+			this->rect.setSize(sf::Vector2f(this->rect.getSize().x - (MOVE_BY_SEC * this->window->getDeltaTime()), this->rect.getSize().y));
+			this->text.setPosition(this->text.getPosition().x - (MOVE_BY_SEC * this->window->getDeltaTime()), this->text.getPosition().y);
 		}
 
 		if (this->rect.getSize().x < 0 || this->text.getPosition().x < posX)

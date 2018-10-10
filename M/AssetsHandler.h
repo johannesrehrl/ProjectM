@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-class ResourceHandler
+class AssetsHandler
 {
 private:
 	thor::ResourceHolder<sf::Font, std::string> fontHolder;
@@ -12,8 +12,8 @@ private:
 	thor::ActionMap<std::string> actionMap;
 
 public:
-	ResourceHandler();
-	~ResourceHandler();
+	AssetsHandler();
+	~AssetsHandler();
 	thor::ResourceHolder<sf::Font, std::string>& getFontHolder() { return fontHolder; }
 	std::map<std::string, sf::Color>& getColorHolder() { return colorHolder; }
 	thor::ActionMap<std::string>& getActionMap() { return actionMap; }

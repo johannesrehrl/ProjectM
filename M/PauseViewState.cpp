@@ -1,8 +1,8 @@
 #include "PauseViewState.h"
 
-PauseViewState::PauseViewState(std::shared_ptr<Window> window, std::shared_ptr<ResourceHandler> resourceHandler)
+PauseViewState::PauseViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
 {
-
+	 
 }
 
 void PauseViewState::update()

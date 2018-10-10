@@ -3,7 +3,7 @@
 #include "Window.h"
 #include "AssetsHandler.h"
 
-class MainStatisticsContainer
+class MainFactionContainer
 {
 private:
 	std::shared_ptr<Window> window;
@@ -14,8 +14,8 @@ private:
 	sf::Text headline;
 
 public:
-	MainStatisticsContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
-	~MainStatisticsContainer();
+	MainFactionContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
+	~MainFactionContainer();
 	void update();
 	void draw();
 };

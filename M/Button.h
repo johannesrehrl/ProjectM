@@ -1,14 +1,14 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include "UiObj.h"
-#include "ResourceHandler.h"
+#include "AssetsHandler.h"
 #include "Window.h"
 #include <string>
 
 class Button : public UiObj
 {
 private:
-	std::shared_ptr<ResourceHandler> resourceHandler;
+	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<Window> window;
 	sf::Text text;
 	bool active;
@@ -20,7 +20,7 @@ private:
 
 public:
 	enum style { STANDARD };
-	Button(std::shared_ptr<ResourceHandler> resourceHandler, std::shared_ptr<Window> window, std::string string, style choosenStyle, sf::Vector2f pos);
+	Button(std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Window> window, std::string string, style choosenStyle, sf::Vector2f pos);
 	~Button();
 	bool isActive() { return active; }
 	void setActive(bool val) { this->active = val; }

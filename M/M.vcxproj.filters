@@ -10,9 +10,6 @@
     <Filter Include="src\game">
       <UniqueIdentifier>{a6eb8df0-a265-443a-9005-7b6d516e8356}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\resource handler">
-      <UniqueIdentifier>{3d826802-3e11-4212-8e3c-0c0ee1bc014b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\settings">
       <UniqueIdentifier>{b5985e37-91bd-4124-aeff-2123f2bfd2fe}</UniqueIdentifier>
     </Filter>
@@ -49,6 +46,18 @@
     <Filter Include="src\ui objects\container\main statistics container">
       <UniqueIdentifier>{c61eab35-02eb-4160-a9a8-972b35b9a267}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui objects\container\main event container">
+      <UniqueIdentifier>{18d7ef30-8a3b-4307-8ae2-d892bd748b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui objects\container\main faction container">
+      <UniqueIdentifier>{52d9f89d-bf84-42c4-b172-d7839d9dfa5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\game resources">
+      <UniqueIdentifier>{41194055-b80c-4564-b282-94309c66557b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\assets handler">
+      <UniqueIdentifier>{3d826802-3e11-4212-8e3c-0c0ee1bc014b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -62,9 +71,6 @@
     </ClCompile>
     <ClCompile Include="Settings.cpp">
       <Filter>src\settings</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceHandler.cpp">
-      <Filter>src\resource handler</Filter>
     </ClCompile>
     <ClCompile Include="MenuItem.cpp">
       <Filter>src\ui objects\menu item</Filter>
@@ -87,6 +93,15 @@
     <ClCompile Include="MainStatisticsContainer.cpp">
       <Filter>src\ui objects\container\main statistics container</Filter>
     </ClCompile>
+    <ClCompile Include="MainEventContainer.cpp">
+      <Filter>src\ui objects\container\main event container</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFactionContainer.cpp">
+      <Filter>src\ui objects\container\main faction container</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetsHandler.cpp">
+      <Filter>src\assets handler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -97,9 +112,6 @@
     </ClInclude>
     <ClInclude Include="Settings.h">
       <Filter>src\settings</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceHandler.h">
-      <Filter>src\resource handler</Filter>
     </ClInclude>
     <ClInclude Include="UiObj.h">
       <Filter>src\ui objects</Filter>
@@ -130,6 +142,15 @@
     </ClInclude>
     <ClInclude Include="MainStatisticsContainer.h">
       <Filter>src\ui objects\container\main statistics container</Filter>
+    </ClInclude>
+    <ClInclude Include="MainEventContainer.h">
+      <Filter>src\ui objects\container\main event container</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFactionContainer.h">
+      <Filter>src\ui objects\container\main faction container</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetsHandler.h">
+      <Filter>src\assets handler</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

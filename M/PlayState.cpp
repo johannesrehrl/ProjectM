@@ -1,12 +1,12 @@
 #include "PlayState.h"
 
-PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<ResourceHandler> resourceHandler)
+PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
 {
 	this->stateChange = "";
 	this->window = window;
-	this->resourceHandler = resourceHandler;
+	this->assetsHandler = assetsHandler;
 
-	this->currentViewState = std::make_shared<MainViewState>(this->window, this->resourceHandler);
+	this->currentViewState = std::make_shared<MainViewState>(this->window, this->assetsHandler);
 }
 
 void PlayState::update()

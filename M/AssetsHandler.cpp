@@ -1,6 +1,6 @@
-#include "ResourceHandler.h"
+#include "AssetsHandler.h"
 
-ResourceHandler::ResourceHandler()
+AssetsHandler::AssetsHandler()
 {
 	this->fontHolder.acquire("expressway", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\expressway_rg.ttf"));
 	this->fontHolder.acquire("aquifer", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\aquifer.regular.ttf"));
@@ -11,8 +11,10 @@ ResourceHandler::ResourceHandler()
 	this->fontHolder.acquire("squares-bold", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\squares-bold.regular.otf"));
 
 	this->colorHolder["background"] = sf::Color(200, 200, 200);
+	this->colorHolder["grey30"] = sf::Color(30, 30, 30);
 	this->colorHolder["grey80"] = sf::Color(80, 80, 80);
 	this->colorHolder["grey160"] = sf::Color(160, 160, 160);
+	this->colorHolder["grey170"] = sf::Color(170, 170, 170);
 	this->colorHolder["grey185"] = sf::Color(185, 185, 185);
 	this->colorHolder["black"] = sf::Color::Black;
 
@@ -24,7 +26,7 @@ ResourceHandler::ResourceHandler()
 	this->actionMap["closedWindow"] = thor::Action(sf::Event::Closed);
 }
 
-ResourceHandler::~ResourceHandler()
+AssetsHandler::~AssetsHandler()
 {
 	this->fontHolder.release("expressway");
 	this->fontHolder.release("aquifer");

@@ -1,11 +1,11 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "ResourceHandler.h"
+#include "AssetsHandler.h"
 
 class Window {
 private:
 	std::shared_ptr<sf::RenderWindow> window;
-	std::shared_ptr<ResourceHandler> resourceHandler;
+	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::vector<sf::VideoMode> desktop;
 	float fps;
 	bool focus;
@@ -14,7 +14,7 @@ private:
 	sf::String title;
 
 public:
-	Window(sf::String title, std::shared_ptr<ResourceHandler> resourceHandler);
+	Window(sf::String title, std::shared_ptr<AssetsHandler> assetsHandler);
 	~Window();
 
 	std::shared_ptr<sf::RenderWindow> getWindow() { return this->window; }

@@ -1,7 +1,7 @@
 #pragma once
 #include "Window.h"
 #include "Settings.h"
-#include "ResourceHandler.h"
+#include "AssetsHandler.h"
 #include "GameState.h"
 #include "MainMenuState.h"
 #include "PlayState.h"
@@ -14,12 +14,12 @@ private:
 	bool running;
 	sf::Text fpsText;
 	std::shared_ptr<Settings> settings;
-	std::shared_ptr<ResourceHandler> resourceHandler;
+	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::unique_ptr<GameState> currentGameState;
 	enum allStates { MAINMENU, SETTINGS, LOAD, PLAY };
 
 public:
-	Game(std::shared_ptr<Settings> settings, std::shared_ptr<ResourceHandler> resourceHandler);
+	Game(std::shared_ptr<Settings> settings, std::shared_ptr<AssetsHandler> assetsHandler);
 	~Game();
 	void update();
 	void draw();

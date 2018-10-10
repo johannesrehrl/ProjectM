@@ -1,14 +1,14 @@
-#include "MainStatisticsContainer.h"
-#define LOCAL_X ((float)this->window->getDesktop().front().width / 100) * 77.5
+#include "MainEventContainer.h"
+#define LOCAL_X ((float)this->window->getDesktop().front().width / 100) * 25
 #define LOCAL_Y ((float)this->window->getDesktop().front().height / 100) * 5
 
-MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
+MainEventContainer::MainEventContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
 
-	this->body.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20, ((float) this->window->getDesktop().front().height / 100) * 90));
-	this->bodyShadow.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20 - 10, ((float) this->window->getDesktop().front().height / 100) * 90 - 10));
+	this->body.setSize(sf::Vector2f(((float)this->window->getDesktop().front().width / 100) * 50, ((float)this->window->getDesktop().front().height / 100) * 90));
+	this->bodyShadow.setSize(sf::Vector2f(((float)this->window->getDesktop().front().width / 100) * 50 - 10, ((float)this->window->getDesktop().front().height / 100) * 90 - 10));
 	this->body.setFillColor(this->assetsHandler->getColorHolder()["grey170"]);
 	this->bodyShadow.setFillColor(this->assetsHandler->getColorHolder()["grey30"]);
 	this->body.setPosition(LOCAL_X, LOCAL_Y);
@@ -17,23 +17,23 @@ MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window,
 	this->headline.setFont(this->assetsHandler->getFontHolder()["squares-bold"]);
 	this->headline.setCharacterSize(20);
 	this->headline.setFillColor(this->assetsHandler->getColorHolder()["black"]);
-	this->headline.setString("National Statistics");
+	this->headline.setString("Events and Notifications");
 	this->headline.setPosition(LOCAL_X + 20, LOCAL_Y + 20);
 }
 
-void MainStatisticsContainer::update()
+void MainEventContainer::update()
 {
 
 }
 
-void MainStatisticsContainer::draw()
+void MainEventContainer::draw()
 {
 	this->window->getWindow()->draw(bodyShadow);
 	this->window->getWindow()->draw(body);
 	this->window->getWindow()->draw(headline);
 }
 
-MainStatisticsContainer::~MainStatisticsContainer()
+MainEventContainer::~MainEventContainer()
 {
 
 }
