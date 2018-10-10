@@ -7,7 +7,7 @@ Game::Game(std::shared_ptr<Settings> settings, std::shared_ptr<AssetsHandler> as
 	this->assetsHandler = assetsHandler;
 
 	this->window = std::make_shared<Window>("Window", assetsHandler);
-	this->window->getWindow()->setVerticalSyncEnabled(this->settings->getUseVSynch());
+	this->window->getWindow()->setVerticalSyncEnabled(this->settings->getUseVSync());
 	this->running = true;
 
 	this->fpsText.setFont(this->assetsHandler->getFontHolder()["expressway"]);

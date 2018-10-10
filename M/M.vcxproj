@@ -139,7 +139,9 @@
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="PauseViewState.cpp" />
     <ClCompile Include="PlayState.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Settings.cpp" />
+    <ClCompile Include="TurnManager.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,7 +157,9 @@
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="PauseViewState.h" />
     <ClInclude Include="PlayState.h" />
+    <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="Settings.h" />
+    <ClInclude Include="TurnManager.h" />
     <ClInclude Include="UiObj.h" />
     <ClInclude Include="ViewState.h" />
     <ClInclude Include="Window.h" />

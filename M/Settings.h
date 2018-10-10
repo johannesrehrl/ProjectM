@@ -18,6 +18,6 @@ public:
 	~Settings();
 	bool getDisplayFps() { return this->displayFps; }
 	void setDisplayFps(bool val) { displayFps = val; }
-	bool getUseVSynch() { return this->useVSync; }
-	void setUseVSynch(bool val) { useVSync = val; }
+	bool getUseVSync() { return this->useVSync; }
+	void setUseVSync(bool val) { useVSync = val; }
 };

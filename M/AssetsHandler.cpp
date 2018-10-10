@@ -16,6 +16,7 @@ AssetsHandler::AssetsHandler()
 	this->colorHolder["grey160"] = sf::Color(160, 160, 160);
 	this->colorHolder["grey170"] = sf::Color(170, 170, 170);
 	this->colorHolder["grey185"] = sf::Color(185, 185, 185);
+	this->colorHolder["grey200"] = sf::Color(200, 200, 200);
 	this->colorHolder["black"] = sf::Color::Black;
 
 	this->actionMap["leftRelease"] = thor::Action(sf::Mouse::Left, thor::Action::ReleaseOnce);

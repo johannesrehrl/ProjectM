@@ -58,6 +58,9 @@
     <Filter Include="src\assets handler">
       <UniqueIdentifier>{3d826802-3e11-4212-8e3c-0c0ee1bc014b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\game states\turn manager">
+      <UniqueIdentifier>{e0e8649d-a79e-4c86-ba68-df9a0b69faee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -101,6 +104,12 @@
     </ClCompile>
     <ClCompile Include="AssetsHandler.cpp">
       <Filter>src\assets handler</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>src\game\game resources</Filter>
+    </ClCompile>
+    <ClCompile Include="TurnManager.cpp">
+      <Filter>src\game\game states\turn manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="AssetsHandler.h">
       <Filter>src\assets handler</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>src\game\game resources</Filter>
+    </ClInclude>
+    <ClInclude Include="TurnManager.h">
+      <Filter>src\game\game states\turn manager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -7,8 +7,8 @@ MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window,
 	this->window = window;
 	this->assetsHandler = assetsHandler;
 
-	this->body.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20, ((float) this->window->getDesktop().front().height / 100) * 90));
-	this->bodyShadow.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20 - 10, ((float) this->window->getDesktop().front().height / 100) * 90 - 10));
+	this->body.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20, ((float) this->window->getDesktop().front().height / 100) * 70));
+	this->bodyShadow.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20 - 10, ((float) this->window->getDesktop().front().height / 100) * 70 - 10));
 	this->body.setFillColor(this->assetsHandler->getColorHolder()["grey170"]);
 	this->bodyShadow.setFillColor(this->assetsHandler->getColorHolder()["grey30"]);
 	this->body.setPosition(LOCAL_X, LOCAL_Y);

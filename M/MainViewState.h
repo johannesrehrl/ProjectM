@@ -5,6 +5,7 @@
 #include "MainStatisticsContainer.h" 
 #include "MainEventContainer.h" 
 #include "MainFactionContainer.h" 
+#include "Button.h" 
 
 class MainViewState : public ViewState
 {
@@ -12,9 +13,12 @@ private:
 	std::string stateChange;
 	std::shared_ptr<Window> window;
 	std::shared_ptr<AssetsHandler> assetsHandler;
+
 	std::shared_ptr<MainStatisticsContainer> mainStatisticsContainer;
 	std::shared_ptr<MainEventContainer> mainEventContainer;
 	std::shared_ptr<MainFactionContainer> mainFactionContainer;
+
+	std::shared_ptr<Button> nextTurnButton;
 
 public:
 	MainViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
@@ -23,4 +27,5 @@ public:
 	void handleInput();
 	void draw();
 	std::string getStateChange() { return stateChange; }
+	void setStateChange(std::string state) { this->stateChange = state; }
 };
