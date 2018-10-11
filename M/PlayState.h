@@ -5,6 +5,8 @@
 #include "ViewState.h"
 #include "MainViewState.h"
 #include "PauseViewState.h"
+#include "TurnManager.h"
+#include "FlagManager.h"
 
 class PlayState : public GameState
 {
@@ -12,6 +14,8 @@ private:
 	std::string stateChange;
 	std::shared_ptr<Window> window;
 	std::shared_ptr<AssetsHandler> assetsHandler;
+	std::shared_ptr<TurnManager> turnManager;
+	std::shared_ptr<FlagManager> flagManager;
 
 	std::shared_ptr<ViewState> currentViewState;
 	std::shared_ptr<ViewState> mainViewState;

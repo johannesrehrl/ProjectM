@@ -141,7 +141,7 @@ void Button::update(sf::Vector2i mousePos)
 		this->buttonSprite.setTexture(this->textureDefault.getTexture());
 	}
 
-	if (this->onSelect == NULL)
+	if (!this->onSelect)
 	{
 		this->active = false;
 	}

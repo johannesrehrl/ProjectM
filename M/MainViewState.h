@@ -6,6 +6,9 @@
 #include "MainEventContainer.h" 
 #include "MainFactionContainer.h" 
 #include "Button.h" 
+#include "TurnManager.h" 
+#include "FlagManager.h" 
+#include "Flag.h" 
 
 class MainViewState : public ViewState
 {
@@ -13,6 +16,8 @@ private:
 	std::string stateChange;
 	std::shared_ptr<Window> window;
 	std::shared_ptr<AssetsHandler> assetsHandler;
+	std::shared_ptr<TurnManager> turnManager;
+	std::shared_ptr<FlagManager> flagManager;
 
 	std::shared_ptr<MainStatisticsContainer> mainStatisticsContainer;
 	std::shared_ptr<MainEventContainer> mainEventContainer;
@@ -21,7 +26,7 @@ private:
 	std::shared_ptr<Button> nextTurnButton;
 
 public:
-	MainViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
+	MainViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<TurnManager> turnManager, std::shared_ptr<FlagManager> flagManager);
 	~MainViewState();
 	void update();
 	void handleInput();

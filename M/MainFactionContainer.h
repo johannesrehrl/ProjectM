@@ -16,6 +16,6 @@ private:
 public:
 	MainFactionContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~MainFactionContainer();
-	void update();
+	void updateEndTurn();
 	void draw();
 };

@@ -21,7 +21,7 @@ MainFactionContainer::MainFactionContainer(std::shared_ptr<Window> window, std::
 	this->headline.setPosition(LOCAL_X + 20, LOCAL_Y + 20);
 }
 
-void MainFactionContainer::update()
+void MainFactionContainer::updateEndTurn()
 {
 
 }

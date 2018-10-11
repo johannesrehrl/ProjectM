@@ -58,8 +58,14 @@
     <Filter Include="src\assets handler">
       <UniqueIdentifier>{3d826802-3e11-4212-8e3c-0c0ee1bc014b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\game\game states\turn manager">
+    <Filter Include="src\game\turn manager">
       <UniqueIdentifier>{e0e8649d-a79e-4c86-ba68-df9a0b69faee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\flag manager">
+      <UniqueIdentifier>{6aa886c3-b6d1-41fc-8993-54b6e55bff4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\flag manager\flag">
+      <UniqueIdentifier>{a9e7f474-70ae-4355-9452-5e4433c6c3d1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +115,13 @@
       <Filter>src\game\game resources</Filter>
     </ClCompile>
     <ClCompile Include="TurnManager.cpp">
-      <Filter>src\game\game states\turn manager</Filter>
+      <Filter>src\game\turn manager</Filter>
+    </ClCompile>
+    <ClCompile Include="FlagManager.cpp">
+      <Filter>src\game\flag manager</Filter>
+    </ClCompile>
+    <ClCompile Include="Flag.cpp">
+      <Filter>src\game\flag manager\flag</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +177,13 @@
       <Filter>src\game\game resources</Filter>
     </ClInclude>
     <ClInclude Include="TurnManager.h">
-      <Filter>src\game\game states\turn manager</Filter>
+      <Filter>src\game\turn manager</Filter>
+    </ClInclude>
+    <ClInclude Include="FlagManager.h">
+      <Filter>src\game\flag manager</Filter>
+    </ClInclude>
+    <ClInclude Include="Flag.h">
+      <Filter>src\game\flag manager\flag</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

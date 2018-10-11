@@ -23,7 +23,7 @@ MainEventContainer::MainEventContainer(std::shared_ptr<Window> window, std::shar
 	this->headline.setPosition(LOCAL_X + 20, LOCAL_Y + 20);
 }
 
-void MainEventContainer::update()
+void MainEventContainer::updateEndTurn()
 {
 
 }

@@ -5,8 +5,10 @@ PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandl
 	this->stateChange = "";
 	this->window = window;
 	this->assetsHandler = assetsHandler;
+	this->flagManager = std::make_shared<FlagManager>();
+	this->turnManager = std::make_shared<TurnManager>(this->flagManager);
 
-	this->mainViewState = std::make_shared<MainViewState>(this->window, this->assetsHandler);
+	this->mainViewState = std::make_shared<MainViewState>(this->window, this->assetsHandler, this->turnManager, this->flagManager);
 	this->pauseViewState = std::make_shared<PauseViewState>(this->window, this->assetsHandler);
 	this->currentViewState = this->mainViewState;
 }
@@ -15,6 +17,7 @@ void PlayState::update()
 {
 	this->currentViewState->update();
 	this->checkStateChange();
+	this->turnManager->update();
 }
 
 void PlayState::handleInput()

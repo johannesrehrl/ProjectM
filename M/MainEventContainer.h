@@ -16,6 +16,6 @@ private:
 public:
 	MainEventContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~MainEventContainer();
-	void update();
+	void updateEndTurn();
 	void draw();
 };
