@@ -19,7 +19,7 @@ private:
 	sf::Sprite buttonSprite;
 
 public:
-	enum style { STANDARD, NEXT_TURN };
+	enum style { STANDARD, NEXT_TURN, PAUSE_MENU };
 	Button(std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Window> window, std::string string, style choosenStyle, sf::Vector2f pos);
 	~Button();
 	bool isActive() { return active; }
