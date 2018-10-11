@@ -5,6 +5,11 @@ FlagManager::FlagManager()
 
 }
 
+void FlagManager::update()
+{
+
+}
+
 bool FlagManager::doesFlagExist(std::string id)
 {
 	for (int i = 0; i < this->allFlags.size(); i++)

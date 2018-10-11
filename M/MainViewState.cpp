@@ -1,15 +1,17 @@
 #include "MainViewState.h"
 
-MainViewState::MainViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<TurnManager> turnManager, std::shared_ptr<FlagManager> flagManager)
+MainViewState::MainViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler,
+	std::shared_ptr<TurnManager> turnManager, std::shared_ptr<FlagManager> flagManager, std::shared_ptr<ResourceManager> resourceManager)
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
 	this->turnManager = turnManager;
 	this->flagManager = flagManager;
+	this->resourceManager = resourceManager;
 
 	this->stateChange = "";
 
-	this->mainStatisticsContainer = std::make_shared<MainStatisticsContainer>(this->window, this->assetsHandler, this->turnManager);
+	this->mainStatisticsContainer = std::make_shared<MainStatisticsContainer>(this->window, this->assetsHandler, this->turnManager, this->resourceManager);
 	this->mainEventContainer = std::make_shared<MainEventContainer>(this->window, this->assetsHandler);
 	this->mainFactionContainer = std::make_shared<MainFactionContainer>(this->window, this->assetsHandler);
 
@@ -33,6 +35,8 @@ void MainViewState::update()
 			this->mainStatisticsContainer->updateEndTurn();
 			this->mainEventContainer->updateEndTurn();
 			this->mainFactionContainer->updateEndTurn();
+
+			this->resourceManager->updateEndTurn();
 		}
 	}
 }

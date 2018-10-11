@@ -132,6 +132,7 @@
     <ClCompile Include="Flag.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="InfluenceResource.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainEventContainer.cpp" />
     <ClCompile Include="MainFactionContainer.cpp" />
@@ -139,6 +140,7 @@
     <ClCompile Include="MainStatisticsContainer.cpp" />
     <ClCompile Include="MainViewState.cpp" />
     <ClCompile Include="MenuItem.cpp" />
+    <ClCompile Include="NationalStability.cpp" />
     <ClCompile Include="PauseViewState.cpp" />
     <ClCompile Include="PlayState.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
@@ -153,15 +155,18 @@
     <ClInclude Include="FlagManager.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameState.h" />
+    <ClInclude Include="InfluenceResource.h" />
     <ClInclude Include="MainEventContainer.h" />
     <ClInclude Include="MainFactionContainer.h" />
     <ClInclude Include="MainMenuState.h" />
     <ClInclude Include="MainStatisticsContainer.h" />
     <ClInclude Include="MainViewState.h" />
     <ClInclude Include="MenuItem.h" />
+    <ClInclude Include="NationalStability.h" />
     <ClInclude Include="PauseViewState.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="ResourceModifier.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="TurnManager.h" />
     <ClInclude Include="UiObj.h" />

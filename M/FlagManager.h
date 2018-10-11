@@ -10,6 +10,7 @@ private:
 public:
 	FlagManager();
 	~FlagManager();
+	void update();
 
 	bool doesFlagExist(std::string id);
 	std::shared_ptr<Flag> getFlag(std::string id);

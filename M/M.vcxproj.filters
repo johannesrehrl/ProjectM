@@ -67,6 +67,15 @@
     <Filter Include="src\game\flag manager\flag">
       <UniqueIdentifier>{a9e7f474-70ae-4355-9452-5e4433c6c3d1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\game resources\influence">
+      <UniqueIdentifier>{b6e215cc-667a-4bba-a0db-f0919d0aa631}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\game resources\national stability">
+      <UniqueIdentifier>{d35e00c5-91fb-458f-8430-5902bda39061}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\game resources\modifier">
+      <UniqueIdentifier>{782e84c3-1e87-4e8b-bb38-41aba34e69bd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -123,6 +132,12 @@
     <ClCompile Include="Flag.cpp">
       <Filter>src\game\flag manager\flag</Filter>
     </ClCompile>
+    <ClCompile Include="InfluenceResource.cpp">
+      <Filter>src\game\game resources\influence</Filter>
+    </ClCompile>
+    <ClCompile Include="NationalStability.cpp">
+      <Filter>src\game\game resources\national stability</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -173,9 +188,6 @@
     <ClInclude Include="AssetsHandler.h">
       <Filter>src\assets handler</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceManager.h">
-      <Filter>src\game\game resources</Filter>
-    </ClInclude>
     <ClInclude Include="TurnManager.h">
       <Filter>src\game\turn manager</Filter>
     </ClInclude>
@@ -184,6 +196,18 @@
     </ClInclude>
     <ClInclude Include="Flag.h">
       <Filter>src\game\flag manager\flag</Filter>
+    </ClInclude>
+    <ClInclude Include="InfluenceResource.h">
+      <Filter>src\game\game resources\influence</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.h">
+      <Filter>src\game\game resources</Filter>
+    </ClInclude>
+    <ClInclude Include="NationalStability.h">
+      <Filter>src\game\game resources\national stability</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceModifier.h">
+      <Filter>src\game\game resources\modifier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

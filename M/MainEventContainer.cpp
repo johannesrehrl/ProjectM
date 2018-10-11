@@ -17,7 +17,7 @@ MainEventContainer::MainEventContainer(std::shared_ptr<Window> window, std::shar
 	this->bodyShadow.setPosition(LOCAL_X + 20, LOCAL_Y + 20);
 
 	this->headline.setFont(this->assetsHandler->getFontHolder()["squares-bold"]);
-	this->headline.setCharacterSize(20);
+	this->headline.setCharacterSize(25);
 	this->headline.setFillColor(this->assetsHandler->getColorHolder()["black"]);
 	this->headline.setString("Events and Notifications");
 	this->headline.setPosition(LOCAL_X + 20, LOCAL_Y + 20);

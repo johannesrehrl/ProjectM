@@ -7,6 +7,9 @@
 #include "PauseViewState.h"
 #include "TurnManager.h"
 #include "FlagManager.h"
+#include "ResourceManager.h"
+#include "InfluenceResource.h"
+#include "NationalStability.h"
 
 class PlayState : public GameState
 {
@@ -16,6 +19,7 @@ private:
 	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<TurnManager> turnManager;
 	std::shared_ptr<FlagManager> flagManager;
+	std::shared_ptr<ResourceManager> resourceManager;
 
 	std::shared_ptr<ViewState> currentViewState;
 	std::shared_ptr<ViewState> mainViewState;
