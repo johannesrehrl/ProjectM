@@ -5,6 +5,7 @@ class ViewState
 {
 public:
 	virtual void update() = 0;
+	virtual void updateEndTurn() = 0;
 	virtual void handleInput() = 0;
 	virtual void draw() = 0;
 	virtual std::string getStateChange() = 0;

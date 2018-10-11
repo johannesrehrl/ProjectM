@@ -51,6 +51,11 @@ void PauseViewState::update()
 	this->backButton->update(mousePos);
 }
 
+void PauseViewState::updateEndTurn()
+{
+
+}
+
 void PauseViewState::handleInput()
 {
 	if (this->assetsHandler->getActionMap().isActive("escapeRelease"))

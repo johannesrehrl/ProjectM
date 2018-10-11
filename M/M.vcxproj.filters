@@ -76,6 +76,12 @@
     <Filter Include="src\game\game resources\modifier">
       <UniqueIdentifier>{782e84c3-1e87-4e8b-bb38-41aba34e69bd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\game states\setup state">
+      <UniqueIdentifier>{cb1e117a-50e6-4ef9-b97b-0ba5f12be8dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ui objects\text input field">
+      <UniqueIdentifier>{c0f5b673-c698-4782-9710-0ff589f0edee}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -137,6 +143,12 @@
     </ClCompile>
     <ClCompile Include="NationalStability.cpp">
       <Filter>src\game\game resources\national stability</Filter>
+    </ClCompile>
+    <ClCompile Include="SetupState.cpp">
+      <Filter>src\game\game states\setup state</Filter>
+    </ClCompile>
+    <ClCompile Include="TextInputField.cpp">
+      <Filter>src\ui objects\text input field</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +220,12 @@
     </ClInclude>
     <ClInclude Include="ResourceModifier.h">
       <Filter>src\game\game resources\modifier</Filter>
+    </ClInclude>
+    <ClInclude Include="SetupState.h">
+      <Filter>src\game\game states\setup state</Filter>
+    </ClInclude>
+    <ClInclude Include="TextInputField.h">
+      <Filter>src\ui objects\text input field</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

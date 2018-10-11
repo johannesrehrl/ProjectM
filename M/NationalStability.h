@@ -17,6 +17,6 @@ public:
 	float getStability() { return this->stability; }
 
 	std::vector<std::shared_ptr<ResourceModifier>> getStabilityModifier() { return this->resourceModifier; }
-	void addStabilityModifier(std::shared_ptr<ResourceModifier> val) { this->resourceModifier.push_back(val); }
+	void addStabilityModifier(std::shared_ptr<ResourceModifier> val);
 	void subStabilityModifier(std::string id);
 };

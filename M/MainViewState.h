@@ -32,6 +32,7 @@ public:
 		std::shared_ptr<FlagManager> flagManager, std::shared_ptr<ResourceManager> resourceManager);
 	~MainViewState();
 	void update();
+	void updateEndTurn();
 	void handleInput();
 	void draw();
 	std::string getStateChange() { return stateChange; }

@@ -27,19 +27,15 @@ void MainViewState::update()
 	sf::Vector2i mousePos = sf::Mouse::getPosition();
 
 	this->nextTurnButton->update(mousePos);
-
-	if (this->flagManager->doesFlagExist("end_turn"))
-	{
-		if (this->flagManager->getFlag("end_turn")->isActive())
-		{
-			this->mainStatisticsContainer->updateEndTurn();
-			this->mainEventContainer->updateEndTurn();
-			this->mainFactionContainer->updateEndTurn();
-
-			this->resourceManager->updateEndTurn();
-		}
-	}
 }
+
+void MainViewState::updateEndTurn()
+{
+	this->mainStatisticsContainer->updateEndTurn();
+	this->mainEventContainer->updateEndTurn();
+	this->mainFactionContainer->updateEndTurn();
+}
+
 
 void MainViewState::handleInput()
 {

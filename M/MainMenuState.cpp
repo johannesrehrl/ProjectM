@@ -10,7 +10,7 @@ MainMenuState::MainMenuState(std::shared_ptr<Settings> settings, std::shared_ptr
 	this->itemList.push_back(std::make_shared<MenuItem>
 		(this->assetsHandler, this->window, "Start", sf::Vector2f(100, this->window->getDesktop().front().height - 300)));
 	this->itemList.at(0)->setOnSelect([this] {
-		stateChange = "PLAY";
+		stateChange = "SETUP";
 	});
 
 	this->itemList.push_back(std::make_shared<MenuItem>

@@ -20,7 +20,7 @@ public:
 	void setText(std::string val) { this->text = val; }
 	void setText(float val) { this->value = val; }
 	void setFinite(bool val) { this->finite = val; }
-	void setDuration(int val) { this->duration = duration; }
+	void setDuration(int val) { this->duration = val; }
 
 	std::string getId() { return this->id; }
 	std::string getText() { return this->text; }

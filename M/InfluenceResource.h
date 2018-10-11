@@ -24,6 +24,6 @@ public:
 	void subInfluence(float val) { this->influence -= val; }
 
 	std::vector<std::shared_ptr<ResourceModifier>> getInfluenceModifiers() { return this->resourceModifier; }
-	void addInfluenceResource(std::shared_ptr<ResourceModifier> val) { this->resourceModifier.push_back(val); }
-	void subInfluenceResource(std::string id);
+	void addInfluenceModifier(std::shared_ptr<ResourceModifier> val) { this->resourceModifier.push_back(val); }
+	void subInfluenceModifier(std::string id);
 };

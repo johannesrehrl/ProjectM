@@ -7,12 +7,33 @@ NationalStability::NationalStability()
 
 void NationalStability::updateEndTurn()
 {
+	this->stability = 0;
+
 	for (int i = 0; i < this->resourceModifier.size(); i++)
 	{
 		if (this->resourceModifier.at(i)->isFinite())
 		{
 			this->resourceModifier.at(i)->setDuration(this->resourceModifier.at(i)->getDuration() - 1);
+
+			if (this->resourceModifier.at(i)->getDuration() >= 0)
+			{
+				this->resourceModifier.erase(resourceModifier.begin() + i);
+			}
 		}
+
+		this->stability += this->resourceModifier.at(i)->getValue();
+	}
+}
+
+void NationalStability::addStabilityModifier(std::shared_ptr<ResourceModifier> val)
+{
+	this->resourceModifier.push_back(val);
+
+	this->stability = 0;
+
+	for (int i = 0; i < this->resourceModifier.size(); i++)
+	{
+		this->stability += this->resourceModifier.at(i)->getValue();
 	}
 }
 

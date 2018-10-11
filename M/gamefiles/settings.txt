@@ -1,2 +1,2 @@
 displayFps=1
-useVSynch=1
+useVSync=1

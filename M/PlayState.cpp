@@ -24,6 +24,11 @@ void PlayState::update()
 	{
 		if (this->flagManager->getFlag("end_turn")->isActive())
 		{
+			this->resourceManager->updateEndTurn();
+
+			this->mainViewState->updateEndTurn();
+			this->pauseViewState->updateEndTurn();
+
 			this->flagManager->getFlag("end_turn")->setActive(false);
 		}
 	}

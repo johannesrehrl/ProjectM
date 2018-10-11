@@ -17,13 +17,18 @@ void InfluenceResource::updateEndTurn()
 		if (this->resourceModifier.at(i)->isFinite())
 		{
 			this->resourceModifier.at(i)->setDuration(this->resourceModifier.at(i)->getDuration() - 1);
+
+			if (this->resourceModifier.at(i)->getDuration() <= 0)
+			{
+				this->resourceModifier.erase(resourceModifier.begin() + i);
+			}
 		}
 	}
 
 	this->influence += this->endTurnChange;
 }
 
-void InfluenceResource::subInfluenceResource(std::string id)
+void InfluenceResource::subInfluenceModifier(std::string id)
 {
 	for (int i = 0; i < this->resourceModifier.size(); i++)
 	{

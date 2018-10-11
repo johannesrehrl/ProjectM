@@ -32,5 +32,11 @@ public:
 	void handleInput();
 	void draw();
 	std::string getStateChange() { return stateChange; }
+	void setStateChange(std::string val) { this->stateChange = val; }
 	void checkStateChange();
+
+	std::shared_ptr<ResourceManager> getResourceManager() { return this->resourceManager; }
+	std::shared_ptr<FlagManager> getFlagManager() { return this->flagManager; }
+	std::shared_ptr<TurnManager> getTurnManager() { return this->turnManager; }
+	std::shared_ptr<ViewState> getMainViewState() { return this->mainViewState; }
 };

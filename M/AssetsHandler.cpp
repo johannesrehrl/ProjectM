@@ -25,6 +25,7 @@ AssetsHandler::AssetsHandler()
 	this->actionMap["gainedFocus"] = thor::Action(sf::Event::GainedFocus);
 	this->actionMap["lostFocus"] = thor::Action(sf::Event::LostFocus);
 	this->actionMap["closedWindow"] = thor::Action(sf::Event::Closed);
+	this->actionMap["textEntered"] = thor::Action(sf::Event::TextEntered);
 }
 
 AssetsHandler::~AssetsHandler()

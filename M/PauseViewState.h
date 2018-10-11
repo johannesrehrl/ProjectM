@@ -23,6 +23,7 @@ public:
 	PauseViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~PauseViewState();
 	void update();
+	void updateEndTurn();
 	void handleInput();
 	void draw();
 	std::string getStateChange() { return stateChange; }

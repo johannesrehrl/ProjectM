@@ -5,6 +5,7 @@
 #include "GameState.h"
 #include "MainMenuState.h"
 #include "PlayState.h"
+#include "SetupState.h"
 #include <iostream>
 
 class Game
@@ -15,7 +16,8 @@ private:
 	sf::Text fpsText;
 	std::shared_ptr<Settings> settings;
 	std::shared_ptr<AssetsHandler> assetsHandler;
-	std::unique_ptr<GameState> currentGameState;
+	std::shared_ptr<GameState> currentGameState;
+	std::shared_ptr<PlayState> playState;
 	enum allStates { MAINMENU, SETTINGS, LOAD, PLAY };
 
 public:
