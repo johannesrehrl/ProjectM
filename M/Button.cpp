@@ -7,8 +7,8 @@
 #define NEXT_TURN_WIDTH ((float)this->window->getDesktop().front().width / 100) * 15
 #define NEXT_TURN_OUTLINE 5
 
-#define PAUSE_MENU_HEIGHT ((float)this->window->getDesktop().front().width / 100) * 3
-#define PAUSE_MENU_WIDTH ((float)this->window->getDesktop().front().width / 100) * 15
+#define PAUSE_MENU_HEIGHT 75
+#define PAUSE_MENU_WIDTH 300
 #define PAUSE_MENU_OUTLINE 3
 
 Button::Button(std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Window> window, std::string string, style choosenStyle, sf::Vector2f pos)
@@ -96,10 +96,10 @@ Button::Button(std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Win
 		rectComp.setFillColor(this->assetsHandler->getColorHolder()["grey170"]);
 		rectComp.setOrigin(rectComp.getSize().x / 2, rectComp.getSize().y / 2);
 
-		textComp.setPosition(PAUSE_MENU_WIDTH / 2 + PAUSE_MENU_OUTLINE, PAUSE_MENU_HEIGHT / 2 + PAUSE_MENU_OUTLINE);
-		rectComp.setPosition(PAUSE_MENU_WIDTH / 2 + PAUSE_MENU_OUTLINE, PAUSE_MENU_HEIGHT / 2 + PAUSE_MENU_OUTLINE);
+		textComp.setPosition((PAUSE_MENU_WIDTH / 2) + PAUSE_MENU_OUTLINE, (PAUSE_MENU_HEIGHT / 2) + PAUSE_MENU_OUTLINE);
+		rectComp.setPosition((PAUSE_MENU_WIDTH / 2) + PAUSE_MENU_OUTLINE, (PAUSE_MENU_HEIGHT / 2) + PAUSE_MENU_OUTLINE);
 
-		this->textureDefault.create(PAUSE_MENU_WIDTH + PAUSE_MENU_OUTLINE * 2, PAUSE_MENU_HEIGHT + PAUSE_MENU_OUTLINE * 2);
+		this->textureDefault.create(PAUSE_MENU_WIDTH + (PAUSE_MENU_OUTLINE * 2), PAUSE_MENU_HEIGHT + (PAUSE_MENU_OUTLINE * 2));
 		this->textureDefault.draw(rectComp);
 		this->textureDefault.draw(textComp);
 		this->textureDefault.display();

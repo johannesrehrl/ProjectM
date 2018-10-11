@@ -16,6 +16,9 @@ private:
 	std::shared_ptr<Button> saveButton;
 	std::shared_ptr<Button> backButton;
 
+	sf::RectangleShape body;
+	sf::RectangleShape bodyShadow;
+
 public:
 	PauseViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~PauseViewState();
