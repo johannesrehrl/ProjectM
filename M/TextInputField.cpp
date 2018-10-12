@@ -9,6 +9,7 @@ TextInputField::TextInputField(std::shared_ptr<Window> window, std::shared_ptr<A
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
+	this->system.connect("textEntered", std::bind(&TextInputField::onInput, this, std::placeholders::_1));
 }
 
 void TextInputField::update() {
@@ -19,24 +20,23 @@ void TextInputField::update() {
 		showUnderscore = !showUnderscore;
 	}
 
-	sf::Event event;
+	this->assetsHandler->getActionMap().invokeCallbacks(system, this->window->getWindow().get());
+}
 
-	while (this->window->getWindow()->pollEvent(event))
-	{
-		if (event.type == sf::Event::TextEntered)
-		{
-			if (event.text.unicode < 128) {
-				if (event.text.unicode == 8) { // backspace
-					if (raw.length() > 0) raw = raw.substr(0, raw.size() - 1);
-					limitReached = false;
-				}
-				else if (event.text.unicode == 13) { // enter
-					entered = true;
-				}
-				else {
-					if (canCharFit() && !limitReached) raw += (char)event.text.unicode;
-				}
-			}
+void TextInputField::onInput(thor::ActionContext<std::string> context)
+{
+	sf::Event event = *context.event;
+
+	if (event.text.unicode < 128) {
+		if (event.text.unicode == 8) { // backspace
+			if (raw.length() > 0) raw = raw.substr(0, raw.size() - 1);
+			limitReached = false;
+		}
+		else if (event.text.unicode == 13) { // enter
+			entered = true;
+		}
+		else {
+			if (canCharFit() && !limitReached) raw += (char)event.text.unicode;
 		}
 	}
 }
@@ -72,11 +72,15 @@ void TextInputField::setSize(sf::FloatRect floatRect) {
 
 	box.setFillColor(sf::Color::White);
 	box.setOutlineColor(sf::Color::Black);
-	box.setOutlineThickness(5.0f);
+	box.setOutlineThickness(3);
 	box.setPosition(size.left, size.top);
 	box.setSize({ size.width, size.height });
 
-	text.setPosition(size.left + PADDING, size.top + size.height / 2 - text.getCharacterSize() / 2);
+	text.setString("ABC");
+	sf::FloatRect textRect = text.getLocalBounds();
+	text.setOrigin(0, textRect.top + textRect.height / 2);
+	text.setString("");
+	text.setPosition(size.left + PADDING, size.top + size.height / 2);
 }
 bool TextInputField::isEntered() const {
 	return entered;

@@ -9,6 +9,10 @@ AssetsHandler::AssetsHandler()
 	this->fontHolder.acquire("pixelverdana", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\PixelFJVerdana12pt.ttf"));
 	this->fontHolder.acquire("rothwell", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\rothwell.army.ttf"));
 	this->fontHolder.acquire("squares-bold", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\squares-bold.regular.otf"));
+	this->fontHolder.acquire("arty-signature", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\Arty_Signature.otf"));
+
+	this->textureHolder.acquire("influence-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\influence_icon.png"));
+	this->textureHolder.acquire("stability-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\stability_icon.png"));
 
 	this->colorHolder["background"] = sf::Color(200, 200, 200);
 	this->colorHolder["grey30"] = sf::Color(30, 30, 30);
@@ -17,6 +21,7 @@ AssetsHandler::AssetsHandler()
 	this->colorHolder["grey170"] = sf::Color(170, 170, 170);
 	this->colorHolder["grey185"] = sf::Color(185, 185, 185);
 	this->colorHolder["grey200"] = sf::Color(200, 200, 200);
+	this->colorHolder["red215"] = sf::Color(215, 0, 0);
 	this->colorHolder["black"] = sf::Color::Black;
 
 	this->actionMap["leftRelease"] = thor::Action(sf::Mouse::Left, thor::Action::ReleaseOnce);

@@ -82,6 +82,9 @@
     <Filter Include="src\ui objects\text input field">
       <UniqueIdentifier>{c0f5b673-c698-4782-9710-0ff589f0edee}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\player">
+      <UniqueIdentifier>{9b255195-2c89-406a-9906-92ca0df765d5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -226,6 +229,9 @@
     </ClInclude>
     <ClInclude Include="TextInputField.h">
       <Filter>src\ui objects\text input field</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>src\game\player</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

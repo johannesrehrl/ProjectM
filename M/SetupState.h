@@ -7,6 +7,7 @@
 #include "PlayState.h"
 #include "TextInputField.h"
 #include "ResourceModifier.h"
+#include "Button.h"
 
 class SetupState : public GameState
 {
@@ -16,7 +17,9 @@ private:
 	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<PlayState> playState;
 
+	sf::Text inputLabelText;
 	std::shared_ptr<TextInputField> nameInputField;
+	std::shared_ptr<Button> singButton;
 
 public:
 	SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<PlayState> playState);
@@ -25,4 +28,5 @@ public:
 	void handleInput();
 	void draw();
 	std::string getStateChange() { return stateChange; }
+	std::shared_ptr<TextInputField> getNameInputField() { return this->nameInputField; }
 };

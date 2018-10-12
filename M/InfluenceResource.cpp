@@ -26,6 +26,23 @@ void InfluenceResource::updateEndTurn()
 	}
 
 	this->influence += this->endTurnChange;
+
+	if (this->influence < 0)
+	{
+		this->influence = 0;
+	}
+}
+
+void InfluenceResource::addInfluenceModifier(std::shared_ptr<ResourceModifier> val)
+{
+	this->resourceModifier.push_back(val);
+
+	this->endTurnChange = 0;
+
+	for (int i = 0; i < this->resourceModifier.size(); i++)
+	{
+		this->endTurnChange += this->resourceModifier.at(i)->getValue();
+	}
 }
 
 void InfluenceResource::subInfluenceModifier(std::string id)

@@ -9,7 +9,9 @@ PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandl
 	this->turnManager = std::make_shared<TurnManager>(this->flagManager);
 	this->resourceManager = std::make_shared<ResourceManager>(std::make_shared<InfluenceResource>(5), std::make_shared<NationalStability>());
 
-	this->mainViewState = std::make_shared<MainViewState>(this->window, this->assetsHandler, this->turnManager, this->flagManager, this->resourceManager);
+	this->player = std::make_shared<Player>();
+
+	this->mainViewState = std::make_shared<MainViewState>(this->window, this->assetsHandler, this->turnManager, this->flagManager, this->resourceManager, this->player);
 	this->pauseViewState = std::make_shared<PauseViewState>(this->window, this->assetsHandler);
 	this->currentViewState = this->mainViewState;
 }

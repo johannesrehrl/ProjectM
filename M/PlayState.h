@@ -10,6 +10,7 @@
 #include "ResourceManager.h"
 #include "InfluenceResource.h"
 #include "NationalStability.h"
+#include "Player.h"
 
 class PlayState : public GameState
 {
@@ -20,6 +21,8 @@ private:
 	std::shared_ptr<TurnManager> turnManager;
 	std::shared_ptr<FlagManager> flagManager;
 	std::shared_ptr<ResourceManager> resourceManager;
+
+	std::shared_ptr<Player> player;
 
 	std::shared_ptr<ViewState> currentViewState;
 	std::shared_ptr<ViewState> mainViewState;
@@ -39,4 +42,6 @@ public:
 	std::shared_ptr<FlagManager> getFlagManager() { return this->flagManager; }
 	std::shared_ptr<TurnManager> getTurnManager() { return this->turnManager; }
 	std::shared_ptr<ViewState> getMainViewState() { return this->mainViewState; }
+
+	std::shared_ptr<Player> getPlayer() { return this->player; }
 };
