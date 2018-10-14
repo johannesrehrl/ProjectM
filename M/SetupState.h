@@ -18,8 +18,11 @@ private:
 	std::shared_ptr<PlayState> playState;
 
 	sf::Text inputLabelText;
+	sf::Text signatureText;
 	std::shared_ptr<TextInputField> nameInputField;
 	std::shared_ptr<Button> singButton;
+
+	sf::Sprite presidentialOrderSprite;
 
 public:
 	SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<PlayState> playState);

@@ -27,7 +27,7 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 	this->inputLabelText.setString("Please enter your name:");
 	this->inputLabelText.setPosition(sf::Vector2f(100,100));
 
-	this->singButton = std::make_shared<Button>(this->assetsHandler, this->window, "Continue", Button::style::STANDARD, sf::Vector2f(350, 250));
+	this->singButton = std::make_shared<Button>(this->assetsHandler, this->window, "Sign", Button::style::STANDARD, sf::Vector2f(350, 250));
 	this->singButton->setOnSelect([this, playState] {
 		this->stateChange = "PLAY";
 		playState->getPlayer()->setName(this->getNameInputField()->getInput());
@@ -35,6 +35,14 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 		//Temporary fix, may cause problems in the future.
 		playState->getMainViewState()->updateEndTurn();
 	});
+
+	this->presidentialOrderSprite.setTexture(this->assetsHandler->getTextureHolder()["presidential-order-00001"]);
+	this->presidentialOrderSprite.setPosition(this->window->getDesktop().front().width - 1000, 100);
+
+	this->signatureText.setFont(this->assetsHandler->getFontHolder()["HomemadeApple"]);
+	this->signatureText.setCharacterSize(25);
+	this->signatureText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
+	this->signatureText.setPosition(this->window->getDesktop().front().width - 1000 + 200, 100 + 600);
 }
 
 void SetupState::update()
@@ -43,6 +51,10 @@ void SetupState::update()
 
 	this->nameInputField->update();
 	this->singButton->update(mousePos);
+
+	this->signatureText.setString(this->nameInputField->getInput());
+	sf::FloatRect textRect = this->signatureText.getLocalBounds();
+	this->signatureText.setOrigin(textRect.width / 2, textRect.top + textRect.height / 2);
 }
 
 void SetupState::handleInput()
@@ -54,7 +66,9 @@ void SetupState::draw()
 {
 	this->nameInputField->draw();
 	this->singButton->draw();
-	this->window->getWindow()->draw(inputLabelText);
+	this->window->getWindow()->draw(this->inputLabelText);
+	this->window->getWindow()->draw(this->presidentialOrderSprite);
+	this->window->getWindow()->draw(this->signatureText);
 }
 
 SetupState::~SetupState()

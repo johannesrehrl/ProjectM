@@ -10,9 +10,12 @@ AssetsHandler::AssetsHandler()
 	this->fontHolder.acquire("rothwell", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\rothwell.army.ttf"));
 	this->fontHolder.acquire("squares-bold", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\squares-bold.regular.otf"));
 	this->fontHolder.acquire("arty-signature", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\Arty_Signature.otf"));
+	this->fontHolder.acquire("HomemadeApple", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\HomemadeApple.ttf"));
+	this->fontHolder.acquire("JennaSue", thor::Resources::fromFile<sf::Font>("gamefiles\\assets\\fonts\\JennaSue.ttf"));
 
-	this->textureHolder.acquire("influence-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\influence_icon.png"));
-	this->textureHolder.acquire("stability-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\stability_icon.png"));
+	this->textureHolder.acquire("influence-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\icons\\influence_icon.png"));
+	this->textureHolder.acquire("stability-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\icons\\stability_icon.png"));
+	this->textureHolder.acquire("presidential-order-00001", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\setup\\presidential_order.png"));
 
 	this->colorHolder["background"] = sf::Color(200, 200, 200);
 	this->colorHolder["grey30"] = sf::Color(30, 30, 30);
