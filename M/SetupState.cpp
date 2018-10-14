@@ -40,9 +40,9 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 	this->presidentialOrderSprite.setPosition(this->window->getDesktop().front().width - 1000, 100);
 
 	this->signatureText.setFont(this->assetsHandler->getFontHolder()["HomemadeApple"]);
-	this->signatureText.setCharacterSize(25);
+	this->signatureText.setCharacterSize(28);
 	this->signatureText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
-	this->signatureText.setPosition(this->window->getDesktop().front().width - 1000 + 200, 100 + 600);
+	this->signatureText.setPosition(this->window->getDesktop().front().width - 1000 + 220, 100 + 600);
 }
 
 void SetupState::update()
