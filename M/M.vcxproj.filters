@@ -82,7 +82,22 @@
     <Filter Include="src\ui objects\text input field">
       <UniqueIdentifier>{c0f5b673-c698-4782-9710-0ff589f0edee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\game\player">
+    <Filter Include="src\ui objects\tooltip">
+      <UniqueIdentifier>{375bb3c0-ca71-48bc-b82d-48ca9fa274dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\government">
+      <UniqueIdentifier>{8c0d89f0-2f0a-4e2b-951e-a47ca00c9e99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\government\ministries">
+      <UniqueIdentifier>{84d0cbc4-f909-4293-8328-f42dc6e1529a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\government\ministries\Ministry of Finance">
+      <UniqueIdentifier>{7b72c133-f2e5-4008-85ae-9094336f1aed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\government\ministries\Minister">
+      <UniqueIdentifier>{81f07cfc-c845-4164-b1f0-dcb8b747211c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\president">
       <UniqueIdentifier>{9b255195-2c89-406a-9906-92ca0df765d5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -152,6 +167,18 @@
     </ClCompile>
     <ClCompile Include="TextInputField.cpp">
       <Filter>src\ui objects\text input field</Filter>
+    </ClCompile>
+    <ClCompile Include="Tooltip.cpp">
+      <Filter>src\ui objects\tooltip</Filter>
+    </ClCompile>
+    <ClCompile Include="FinanceMinistry.cpp">
+      <Filter>src\game\government\ministries\Ministry of Finance</Filter>
+    </ClCompile>
+    <ClCompile Include="Minister.cpp">
+      <Filter>src\game\government\ministries\Minister</Filter>
+    </ClCompile>
+    <ClCompile Include="Government.cpp">
+      <Filter>src\game\government</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -230,8 +257,23 @@
     <ClInclude Include="TextInputField.h">
       <Filter>src\ui objects\text input field</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
-      <Filter>src\game\player</Filter>
+    <ClInclude Include="Tooltip.h">
+      <Filter>src\ui objects\tooltip</Filter>
+    </ClInclude>
+    <ClInclude Include="Ministry.h">
+      <Filter>src\game\government\ministries</Filter>
+    </ClInclude>
+    <ClInclude Include="FinanceMinistry.h">
+      <Filter>src\game\government\ministries\Ministry of Finance</Filter>
+    </ClInclude>
+    <ClInclude Include="Minister.h">
+      <Filter>src\game\government\ministries\Minister</Filter>
+    </ClInclude>
+    <ClInclude Include="Government.h">
+      <Filter>src\game\government</Filter>
+    </ClInclude>
+    <ClInclude Include="President.h">
+      <Filter>src\game\president</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -3,16 +3,18 @@
 #define LOCAL_Y ((float)this->window->getDesktop().front().height / 100) * 5
 
 MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler,
-	std::shared_ptr<TurnManager> turnManager, std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Player> player)
+	std::shared_ptr<TurnManager> turnManager, std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Government> government)
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
 	this->turnManager = turnManager;
 	this->resourceManager = resourceManager;
-	this->player = player;
+	this->government = government;
 
-	this->body.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20, ((float) this->window->getDesktop().front().height / 100) * 70));
-	this->bodyShadow.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20 - 10, ((float) this->window->getDesktop().front().height / 100) * 70 - 10));
+	this->body.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20, 
+		((float) this->window->getDesktop().front().height / 100) * 70));
+	this->bodyShadow.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20 - 10, 
+		((float) this->window->getDesktop().front().height / 100) * 70 - 10));
 	this->body.setFillColor(this->assetsHandler->getColorHolder()["grey170"]);
 	this->bodyShadow.setFillColor(this->assetsHandler->getColorHolder()["grey30"]);
 	this->body.setPosition(LOCAL_X, LOCAL_Y);
@@ -33,7 +35,7 @@ MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window,
 	this->presidentNameText.setFont(this->assetsHandler->getFontHolder()["expressway"]);
 	this->presidentNameText.setCharacterSize(20);
 	this->presidentNameText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
-	this->presidentNameText.setString("President: " + this->player->getName());
+	this->presidentNameText.setString("President: " + this->government->getPresident()->getName());
 	this->presidentNameText.setPosition(LOCAL_X + 20, LOCAL_Y + 100);
 
 	this->influenceText.setFont(this->assetsHandler->getFontHolder()["expressway"]);
@@ -59,7 +61,7 @@ MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window,
 void MainStatisticsContainer::updateEndTurn()
 {
 	this->dateText.setString(this->turnManager->getDate());
-	this->presidentNameText.setString("President: " + this->player->getName());
+	this->presidentNameText.setString("President: " + this->government->getPresident()->getName());
 	this->stabilityText.setString(std::to_string((int)this->resourceManager->getNationalStability()->getStability()) + "%");
 
 	if (this->resourceManager->getInfluenceResource()->getEndTurnChange() < 0)
@@ -75,6 +77,11 @@ void MainStatisticsContainer::updateEndTurn()
 		this->influenceText.setString(std::to_string((int)this->resourceManager->getInfluenceResource()->getInfluence()) + "+" +
 			std::to_string((int)this->resourceManager->getInfluenceResource()->getEndTurnChange()));
 	}
+}
+
+void MainStatisticsContainer::update()
+{
+
 }
 
 void MainStatisticsContainer::draw()

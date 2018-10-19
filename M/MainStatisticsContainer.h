@@ -4,7 +4,7 @@
 #include "AssetsHandler.h"
 #include "TurnManager.h"
 #include "ResourceManager.h" 
-#include "Player.h" 
+#include "Government.h" 
 
 class MainStatisticsContainer
 {
@@ -13,7 +13,7 @@ private:
 	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<TurnManager> turnManager;
 	std::shared_ptr<ResourceManager> resourceManager;
-	std::shared_ptr<Player> player;
+	std::shared_ptr<Government> government;
 
 	sf::RectangleShape body;
 	sf::RectangleShape bodyShadow;
@@ -29,8 +29,9 @@ private:
 
 public:
 	MainStatisticsContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<TurnManager> turnManager,
-		std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Player> player);
+		std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Government> government);
 	~MainStatisticsContainer();
 	void updateEndTurn();
+	void update();
 	void draw();
 };

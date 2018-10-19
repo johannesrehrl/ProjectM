@@ -10,6 +10,7 @@
 #include "FlagManager.h" 
 #include "Flag.h" 
 #include "ResourceManager.h" 
+#include "Government.h" 
 
 class MainViewState : public ViewState
 {
@@ -20,7 +21,7 @@ private:
 	std::shared_ptr<TurnManager> turnManager;
 	std::shared_ptr<FlagManager> flagManager;
 	std::shared_ptr<ResourceManager> resourceManager;
-	std::shared_ptr<Player> player;
+	std::shared_ptr<Government> government;
 
 	std::shared_ptr<MainStatisticsContainer> mainStatisticsContainer;
 	std::shared_ptr<MainEventContainer> mainEventContainer;
@@ -30,7 +31,7 @@ private:
 
 public:
 	MainViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<TurnManager> turnManager,
-		std::shared_ptr<FlagManager> flagManager, std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Player> player);
+		std::shared_ptr<FlagManager> flagManager, std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Government> government);
 	~MainViewState();
 	void update();
 	void updateEndTurn();

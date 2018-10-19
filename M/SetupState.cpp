@@ -30,7 +30,7 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 	this->singButton = std::make_shared<Button>(this->assetsHandler, this->window, "Sign", Button::style::STANDARD, sf::Vector2f(350, 250));
 	this->singButton->setOnSelect([this, playState] {
 		this->stateChange = "PLAY";
-		playState->getPlayer()->setName(this->getNameInputField()->getInput());
+		playState->getGovernment()->getPresident()->setName(this->getNameInputField()->getInput());
 
 		//Temporary fix, may cause problems in the future.
 		playState->getMainViewState()->updateEndTurn();
