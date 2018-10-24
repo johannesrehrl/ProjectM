@@ -20,6 +20,8 @@ Button::Button(std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Win
 	sf::RectangleShape rectComp;
 	sf::FloatRect textRect;
 
+	this->active = true;
+
 	switch (choosenStyle)
 	{
 	case style::STANDARD:

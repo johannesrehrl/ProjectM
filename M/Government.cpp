@@ -4,7 +4,7 @@ Government::Government()
 {
 	this->president = std::make_shared<President>();
 	this->financeMinistry = std::make_shared<FinanceMinistry>("Ministry of Finance", 
-		std::make_shared<Minister>("dieter_arfeld", "Dieter Arfeld", 652), 80, 20);
+		std::make_shared<Minister>("dieter_arfeld", "Dieter Arfeld", 652), 20);
 }
 
 void Government::updateEndTurn()

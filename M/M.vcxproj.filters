@@ -100,6 +100,9 @@
     <Filter Include="src\game\president">
       <UniqueIdentifier>{9b255195-2c89-406a-9906-92ca0df765d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\game resources\corruption">
+      <UniqueIdentifier>{78d0db01-7c55-4413-8e70-6b328a80c965}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -179,6 +182,9 @@
     </ClCompile>
     <ClCompile Include="Government.cpp">
       <Filter>src\game\government</Filter>
+    </ClCompile>
+    <ClCompile Include="CorruptionRate.cpp">
+      <Filter>src\game\game resources\corruption</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -274,6 +280,9 @@
     </ClInclude>
     <ClInclude Include="Modifier.h">
       <Filter>src\game\game resources\modifier</Filter>
+    </ClInclude>
+    <ClInclude Include="CorruptionRate.h">
+      <Filter>src\game\game resources\corruption</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

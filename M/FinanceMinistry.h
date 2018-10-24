@@ -8,7 +8,7 @@ private:
 
 
 public:
-	FinanceMinistry(std::string name, std::shared_ptr<Minister> minister, float loyality, float corruption);
+	FinanceMinistry(std::string name, std::shared_ptr<Minister> minister, float corruption);
 	~FinanceMinistry();
 
 	void updateEndTurn();

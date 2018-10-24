@@ -27,6 +27,7 @@ MenuItem::MenuItem(std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr
 	this->posX = pos.x;
 
 	this->selected = false;
+	this->active = true;
 }
 
 void MenuItem::update(sf::Vector2i mousePos)
