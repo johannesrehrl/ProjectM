@@ -25,7 +25,7 @@ void NationalStability::updateEndTurn()
 	}
 }
 
-void NationalStability::addStabilityModifier(std::shared_ptr<ResourceModifier> val)
+void NationalStability::addStabilityModifier(std::shared_ptr<Modifier> val)
 {
 	this->resourceModifier.push_back(val);
 

@@ -172,12 +172,12 @@
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Minister.h" />
     <ClInclude Include="Ministry.h" />
+    <ClInclude Include="Modifier.h" />
     <ClInclude Include="NationalStability.h" />
     <ClInclude Include="PauseViewState.h" />
     <ClInclude Include="PlayState.h" />
     <ClInclude Include="President.h" />
     <ClInclude Include="ResourceManager.h" />
-    <ClInclude Include="ResourceModifier.h" />
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SetupState.h" />
     <ClInclude Include="TextInputField.h" />

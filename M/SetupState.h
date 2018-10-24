@@ -6,7 +6,7 @@
 #include "AssetsHandler.h"
 #include "PlayState.h"
 #include "TextInputField.h"
-#include "ResourceModifier.h"
+#include "Modifier.h"
 #include "Button.h"
 
 class SetupState : public GameState

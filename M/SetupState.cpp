@@ -8,14 +8,14 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 	this->playState = playState;
 
 	this->playState->getResourceManager()->getInfluenceResource()->addInfluenceModifier
-	(std::make_shared<ResourceModifier>("base", "Base influence", "Base influence per month.", 2));
+	(std::make_shared<Modifier>("base", "Base influence", "Base influence per month.", 2));
 	this->playState->getResourceManager()->getInfluenceResource()->addInfluenceModifier
-	(std::make_shared<ResourceModifier>("coup_d_etat", "Coup d'etat", "The recent coup d'etat leaves the nations administration in chaos.", -1, 6));
+	(std::make_shared<Modifier>("coup_d_etat", "Coup d'etat", "The recent coup d'etat leaves the nations administration in chaos.", -1, 6));
 
 	this->playState->getResourceManager()->getNationalStability()->addStabilityModifier
-	(std::make_shared<ResourceModifier>("base", "Base stability", "Base stability.", 50));
+	(std::make_shared<Modifier>("base", "Base stability", "Base stability.", 50));
 	this->playState->getResourceManager()->getNationalStability()->addStabilityModifier
-	(std::make_shared<ResourceModifier>("coup_d_etat", "Coup d'etat", "The recent coup d'etat leaves the nation unstable.", -20));
+	(std::make_shared<Modifier>("coup_d_etat", "Coup d'etat", "The recent coup d'etat leaves the nation unstable.", -20));
 
 	this->nameInputField = std::make_shared<TextInputField>(window, assetsHandler);
 	this->nameInputField->setFont(this->assetsHandler->getFontHolder()["aquifer"]);

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 
-class ResourceModifier
+class Modifier
 {
 private:
 	std::string id;
@@ -12,11 +12,15 @@ private:
 	int duration;
 
 public:
-	ResourceModifier(std::string id, std::string shortText, std::string longText, float value) 
-	{ this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = false; }
-	ResourceModifier(std::string id, std::string shortText, std::string longText, float value, int duration) 
-	{ this->id = id; this->shortText = shortText; this->longText = longText; this->value = value;this->finite = true; this->duration = duration;}
-	~ResourceModifier(){}
+	Modifier(std::string id, std::string shortText, std::string longText, float value)
+	{
+		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = false;
+	}
+	Modifier(std::string id, std::string shortText, std::string longText, float value, int duration)
+	{
+		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = true; this->duration = duration;
+	}
+	~Modifier() {}
 
 	void setId(std::string val) { this->id = val; }
 	void setShortText(std::string val) { this->shortText = val; }

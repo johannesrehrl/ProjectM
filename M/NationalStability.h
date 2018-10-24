@@ -1,12 +1,12 @@
 #pragma once
 #include <vector>
-#include "ResourceModifier.h"
+#include "Modifier.h"
 
 class NationalStability
 {
 private:
 	float stability;
-	std::vector<std::shared_ptr<ResourceModifier>> resourceModifier;
+	std::vector<std::shared_ptr<Modifier>> resourceModifier;
 
 public:
 	NationalStability();
@@ -16,7 +16,7 @@ public:
 	void setStability(float val) { this->stability = val; }
 	float getStability() { return this->stability; }
 
-	std::vector<std::shared_ptr<ResourceModifier>> getStabilityModifier() { return this->resourceModifier; }
-	void addStabilityModifier(std::shared_ptr<ResourceModifier> val);
+	std::vector<std::shared_ptr<Modifier>> getStabilityModifier() { return this->resourceModifier; }
+	void addStabilityModifier(std::shared_ptr<Modifier> val);
 	void subStabilityModifier(std::string id);
 };

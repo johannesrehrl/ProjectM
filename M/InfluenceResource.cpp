@@ -33,7 +33,7 @@ void InfluenceResource::updateEndTurn()
 	}
 }
 
-void InfluenceResource::addInfluenceModifier(std::shared_ptr<ResourceModifier> val)
+void InfluenceResource::addInfluenceModifier(std::shared_ptr<Modifier> val)
 {
 	this->resourceModifier.push_back(val);
 

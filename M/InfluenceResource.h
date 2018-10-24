@@ -1,5 +1,5 @@
 #pragma once
-#include "ResourceModifier.h"
+#include "Modifier.h"
 #include <vector>
 
 class InfluenceResource
@@ -7,7 +7,7 @@ class InfluenceResource
 private:
 	float influence;
 	float endTurnChange;
-	std::vector<std::shared_ptr<ResourceModifier>> resourceModifier;
+	std::vector<std::shared_ptr<Modifier>> resourceModifier;
 
 public:
 	InfluenceResource(float influence);
@@ -23,7 +23,7 @@ public:
 	void addInfluence(float val) { this->influence += val; }
 	void subInfluence(float val) { this->influence -= val; }
 
-	std::vector<std::shared_ptr<ResourceModifier>> getInfluenceModifiers() { return this->resourceModifier; }
-	void addInfluenceModifier(std::shared_ptr<ResourceModifier> val);
+	std::vector<std::shared_ptr<Modifier>> getInfluenceModifiers() { return this->resourceModifier; }
+	void addInfluenceModifier(std::shared_ptr<Modifier> val);
 	void subInfluenceModifier(std::string id);
 };

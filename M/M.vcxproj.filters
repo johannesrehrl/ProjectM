@@ -248,9 +248,6 @@
     <ClInclude Include="NationalStability.h">
       <Filter>src\game\game resources\national stability</Filter>
     </ClInclude>
-    <ClInclude Include="ResourceModifier.h">
-      <Filter>src\game\game resources\modifier</Filter>
-    </ClInclude>
     <ClInclude Include="SetupState.h">
       <Filter>src\game\game states\setup state</Filter>
     </ClInclude>
@@ -274,6 +271,9 @@
     </ClInclude>
     <ClInclude Include="President.h">
       <Filter>src\game\president</Filter>
+    </ClInclude>
+    <ClInclude Include="Modifier.h">
+      <Filter>src\game\game resources\modifier</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
