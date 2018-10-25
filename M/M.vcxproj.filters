@@ -103,6 +103,15 @@
     <Filter Include="src\game\game resources\corruption">
       <UniqueIdentifier>{78d0db01-7c55-4413-8e70-6b328a80c965}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui objects\container\main faction container\ministry card">
+      <UniqueIdentifier>{48538a91-4486-417e-b37a-1721a5d8b286}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\game resources\loyality">
+      <UniqueIdentifier>{e58d6bd3-bbbb-49da-a2da-d89dbdf5740b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\game resources\power">
+      <UniqueIdentifier>{0b4278e7-e5df-4710-afd3-8878e3340adf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -185,6 +194,15 @@
     </ClCompile>
     <ClCompile Include="CorruptionRate.cpp">
       <Filter>src\game\game resources\corruption</Filter>
+    </ClCompile>
+    <ClCompile Include="MinistryCard.cpp">
+      <Filter>src\ui objects\container\main faction container\ministry card</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractLoyality.cpp">
+      <Filter>src\game\game resources\loyality</Filter>
+    </ClCompile>
+    <ClCompile Include="AbstractPower.cpp">
+      <Filter>src\game\game resources\power</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -283,6 +301,15 @@
     </ClInclude>
     <ClInclude Include="CorruptionRate.h">
       <Filter>src\game\game resources\corruption</Filter>
+    </ClInclude>
+    <ClInclude Include="MinistryCard.h">
+      <Filter>src\ui objects\container\main faction container\ministry card</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractLoyality.h">
+      <Filter>src\game\game resources\loyality</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractPower.h">
+      <Filter>src\game\game resources\power</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

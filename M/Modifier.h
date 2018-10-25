@@ -25,7 +25,7 @@ public:
 	void setId(std::string val) { this->id = val; }
 	void setShortText(std::string val) { this->shortText = val; }
 	void setLongText(std::string val) { this->longText = val; }
-	void setText(float val) { this->value = val; }
+	void setValue(float val) { this->value = val; }
 	void setFinite(bool val) { this->finite = val; }
 	void setDuration(int val) { this->duration = val; }
 

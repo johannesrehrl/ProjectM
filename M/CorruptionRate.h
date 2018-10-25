@@ -10,7 +10,7 @@ private:
 	std::vector<std::shared_ptr<Modifier>> resourceModifier;
 
 public:
-	CorruptionRate(float corruption);
+	CorruptionRate();
 	~CorruptionRate();
 	void updateEndTurn();
 
@@ -24,7 +24,8 @@ public:
 	void subCorruption(float val) { this->corruption -= val; }
 
 	std::vector<std::shared_ptr<Modifier>> getCorruptionModifiers() { return this->resourceModifier; }
-	void addCorruptionModifier(std::shared_ptr<Modifier> val);
+	std::shared_ptr<Modifier> getCorruptionModifierById(std::string val);
+	void addCorruptionModifier(std::shared_ptr<Modifier> id);
 	void subCorruptionModifier(std::string id);
 
 	void recalcCorruption();

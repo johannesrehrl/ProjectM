@@ -1,8 +1,8 @@
 #include "CorruptionRate.h"
 
-CorruptionRate::CorruptionRate(float corruption)
+CorruptionRate::CorruptionRate()
 {
-	this->corruption = corruption;
+	this->corruption = 0;
 	this->endTurnChange = 0;
 }
 
@@ -31,18 +31,31 @@ void CorruptionRate::updateEndTurn()
 	{
 		this->corruption = 0;
 	}
+
+	else if (this->corruption > 100)
+	{
+		this->corruption = 100;
+	}
+}
+
+std::shared_ptr<Modifier> CorruptionRate::getCorruptionModifierById(std::string id)
+{
+	for (int i = 0; i < this->resourceModifier.size(); i++)
+	{
+		if (this->resourceModifier.at(i)->getId() == id)
+		{
+			return this->resourceModifier.at(i);
+		}
+	}
+
+	return nullptr;
 }
 
 void CorruptionRate::addCorruptionModifier(std::shared_ptr<Modifier> val)
 {
 	this->resourceModifier.push_back(val);
 
-	this->endTurnChange = 0;
-
-	for (int i = 0; i < this->resourceModifier.size(); i++)
-	{
-		this->endTurnChange += this->resourceModifier.at(i)->getValue();
-	}
+	this->recalcCorruption();
 }
 
 void CorruptionRate::subCorruptionModifier(std::string id)
@@ -54,6 +67,8 @@ void CorruptionRate::subCorruptionModifier(std::string id)
 			this->resourceModifier.erase(resourceModifier.begin() + i);
 		}
 	}
+
+	this->recalcCorruption();
 }
 
 void CorruptionRate::recalcCorruption()
@@ -63,6 +78,16 @@ void CorruptionRate::recalcCorruption()
 	for (int i = 0; i < this->resourceModifier.size(); i++)
 	{
 		this->endTurnChange += this->resourceModifier.at(i)->getValue();
+	}
+
+	if (this->corruption < 0)
+	{
+		this->corruption = 0;
+	}
+
+	else if (this->corruption > 100)
+	{
+		this->corruption = 100;
 	}
 }
 

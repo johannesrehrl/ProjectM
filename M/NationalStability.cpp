@@ -25,6 +25,19 @@ void NationalStability::updateEndTurn()
 	}
 }
 
+std::shared_ptr<Modifier> NationalStability::getStabilityModifierById(std::string id)
+{
+	for (int i = 0; i < this->resourceModifier.size(); i++)
+	{
+		if (this->resourceModifier.at(i)->getId() == id)
+		{
+			return this->resourceModifier.at(i);
+		}
+	}
+
+	return nullptr;
+}
+
 void NationalStability::addStabilityModifier(std::shared_ptr<Modifier> val)
 {
 	this->resourceModifier.push_back(val);

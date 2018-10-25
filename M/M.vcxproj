@@ -128,6 +128,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AbstractLoyality.cpp" />
+    <ClCompile Include="AbstractPower.cpp" />
     <ClCompile Include="AssetsHandler.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CorruptionRate.cpp" />
@@ -145,6 +147,7 @@
     <ClCompile Include="MainViewState.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="Minister.cpp" />
+    <ClCompile Include="MinistryCard.cpp" />
     <ClCompile Include="NationalStability.cpp" />
     <ClCompile Include="PauseViewState.cpp" />
     <ClCompile Include="PlayState.cpp" />
@@ -157,6 +160,8 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractLoyality.h" />
+    <ClInclude Include="AbstractPower.h" />
     <ClInclude Include="AssetsHandler.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CorruptionRate.h" />
@@ -175,6 +180,7 @@
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Minister.h" />
     <ClInclude Include="Ministry.h" />
+    <ClInclude Include="MinistryCard.h" />
     <ClInclude Include="Modifier.h" />
     <ClInclude Include="NationalStability.h" />
     <ClInclude Include="PauseViewState.h" />

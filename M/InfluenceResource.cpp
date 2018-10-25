@@ -33,6 +33,19 @@ void InfluenceResource::updateEndTurn()
 	}
 }
 
+std::shared_ptr<Modifier> InfluenceResource::getInfluenceModifierById(std::string id)
+{
+	for (int i = 0; i < this->resourceModifier.size(); i++)
+	{
+		if (this->resourceModifier.at(i)->getId() == id)
+		{
+			return this->resourceModifier.at(i);
+		}
+	}
+
+	return nullptr;
+}
+
 void InfluenceResource::addInfluenceModifier(std::shared_ptr<Modifier> val)
 {
 	this->resourceModifier.push_back(val);

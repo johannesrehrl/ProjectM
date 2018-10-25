@@ -15,6 +15,9 @@ AssetsHandler::AssetsHandler()
 
 	this->textureHolder.acquire("influence-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\icons\\influence_icon.png"));
 	this->textureHolder.acquire("stability-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\icons\\stability_icon.png"));
+	this->textureHolder.acquire("corruption-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\icons\\corruption_icon.png"));
+	this->textureHolder.acquire("loyality-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\icons\\green_heart_icon.png"));
+	this->textureHolder.acquire("power-icon", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\icons\\power_icon.png"));
 	this->textureHolder.acquire("presidential-order-00001", thor::Resources::fromFile<sf::Texture>("gamefiles\\assets\\textures\\setup\\presidential_order.png"));
 
 	this->colorHolder["background"] = sf::Color(200, 200, 200);

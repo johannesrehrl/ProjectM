@@ -2,19 +2,20 @@
 #include <string>
 #include "Minister.h"
 #include "Modifier.h"
+#include "CorruptionRate.h"
 
 class Ministry
 {
 protected:
 	std::shared_ptr<Minister> minister;
+	std::shared_ptr<CorruptionRate> corruptionRate;
 	std::string name;
-	float corruption;
 
 public:
-	Ministry(std::string name, std::shared_ptr<Minister> minister, float corruption) {
+	Ministry(std::string name, std::shared_ptr<Minister> minister) {
 		this->name = name; 
 		this->minister = minister;
-		this->corruption = corruption;
+		this->corruptionRate = std::make_shared<CorruptionRate>();
 	}
 	~Ministry(){}
 
@@ -25,4 +26,6 @@ public:
 
 	void setMinister(std::shared_ptr<Minister> minister) { this->minister.reset(); this->minister = minister; }
 	std::shared_ptr<Minister> getMinister() { return this->minister; }
+
+	std::shared_ptr<CorruptionRate> getCorruptionRate() { return this->corruptionRate; }
 };
