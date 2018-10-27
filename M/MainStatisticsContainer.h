@@ -32,6 +32,5 @@ public:
 		std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Government> government);
 	~MainStatisticsContainer();
 	void updateEndTurn();
-	void update();
 	void draw();
 };

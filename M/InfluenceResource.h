@@ -14,7 +14,7 @@ public:
 	~InfluenceResource();
 	void updateEndTurn();
 
-	float getInfluence() { return this->influence; }
+	float getValue() { return this->influence; }
 	float getEndTurnChange() { return this->endTurnChange; }
 
 	void setInfluence(float val) { this->influence = val; }

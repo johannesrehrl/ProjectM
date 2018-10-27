@@ -41,14 +41,14 @@ MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window,
 	this->influenceText.setFont(this->assetsHandler->getFontHolder()["expressway"]);
 	this->influenceText.setCharacterSize(20);
 	this->influenceText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
-	this->influenceText.setString(std::to_string((int)this->resourceManager->getInfluenceResource()->getInfluence()) + " " + 
+	this->influenceText.setString(std::to_string((int)this->resourceManager->getInfluenceResource()->getValue()) + " " +
 		std::to_string((int)this->resourceManager->getInfluenceResource()->getEndTurnChange()));
 	this->influenceText.setPosition(LOCAL_X + 50, LOCAL_Y + 130);
 
 	this->stabilityText.setFont(this->assetsHandler->getFontHolder()["expressway"]);
 	this->stabilityText.setCharacterSize(20);
 	this->stabilityText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
-	this->stabilityText.setString(std::to_string((int)this->resourceManager->getNationalStability()->getStability()) + "%");
+	this->stabilityText.setString(std::to_string((int)this->resourceManager->getNationalStability()->getValue()) + "%");
 	this->stabilityText.setPosition(LOCAL_X + 50, LOCAL_Y + 160);
 
 	this->influenceSprite.setTexture(this->assetsHandler->getTextureHolder()["influence-icon"]);
@@ -62,26 +62,21 @@ void MainStatisticsContainer::updateEndTurn()
 {
 	this->dateText.setString(this->turnManager->getDate());
 	this->presidentNameText.setString("President: " + this->government->getPresident()->getName());
-	this->stabilityText.setString(std::to_string((int)this->resourceManager->getNationalStability()->getStability()) + "%");
+	this->stabilityText.setString(std::to_string((int)this->resourceManager->getNationalStability()->getValue()) + "%");
 
 	if (this->resourceManager->getInfluenceResource()->getEndTurnChange() < 0)
 	{
 		this->influenceText.setFillColor(this->assetsHandler->getColorHolder()["red215"]);
-		this->influenceText.setString(std::to_string((int)this->resourceManager->getInfluenceResource()->getInfluence()) + "" +
+		this->influenceText.setString(std::to_string((int)this->resourceManager->getInfluenceResource()->getValue()) + "" +
 			std::to_string((int)this->resourceManager->getInfluenceResource()->getEndTurnChange()));
 	}
 
 	else
 	{
 		this->influenceText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
-		this->influenceText.setString(std::to_string((int)this->resourceManager->getInfluenceResource()->getInfluence()) + "+" +
+		this->influenceText.setString(std::to_string((int)this->resourceManager->getInfluenceResource()->getValue()) + "+" +
 			std::to_string((int)this->resourceManager->getInfluenceResource()->getEndTurnChange()));
 	}
-}
-
-void MainStatisticsContainer::update()
-{
-
 }
 
 void MainStatisticsContainer::draw()

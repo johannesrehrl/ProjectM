@@ -13,8 +13,7 @@ public:
 	~NationalStability();
 	void updateEndTurn();
 
-	void setStability(float val) { this->stability = val; }
-	float getStability() { return this->stability; }
+	float getValue() { return this->stability; }
 
 	std::vector<std::shared_ptr<Modifier>> getStabilityModifier() { return this->resourceModifier; }
 	std::shared_ptr<Modifier> getStabilityModifierById(std::string id);

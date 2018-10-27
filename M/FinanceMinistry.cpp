@@ -7,7 +7,8 @@ FinanceMinistry::FinanceMinistry(std::string name, std::shared_ptr<Minister> min
 
 void FinanceMinistry::updateEndTurn()
 {
-	float newCorruption = 1 - ((((this->minister->getLoyality() / 100) * 2) / 100) * this->minister->getPower());
+	float newCorruption = 1 - ((((this->minister->getLoyality()->getValue() / 100) * 2) / 100) * 
+		this->minister->getPower()->getValue());
 
 	if (this->corruptionRate->getCorruptionModifierById("minister") != nullptr)
 	{

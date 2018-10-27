@@ -14,7 +14,7 @@ public:
 	~AbstractLoyality();
 	void updateEndTurn();
 
-	float getLoyality() { return this->loyality; }
+	float getValue() { return this->loyality; }
 	void addLoyalityModifier(std::shared_ptr<Modifier> mod) { this->loyalityModifiers.push_back(mod); this->recalcLoyality(); }
 	void subLoyalityModifier(std::string id);
 

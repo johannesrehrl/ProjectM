@@ -3,7 +3,7 @@
 #include "Minister.h"
 #include "Modifier.h"
 
-class FinanceMinistry : Ministry
+class FinanceMinistry : public Ministry
 {
 private:
 

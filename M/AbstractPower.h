@@ -14,7 +14,7 @@ public:
 	~AbstractPower();
 	void updateEndTurn();
 
-	float getPower() { return this->power; }
+	float getValue() { return this->power; }
 	void addPowerModifier(std::shared_ptr<Modifier> mod) { this->powerModifiers.push_back(mod); this->recalcPower(); }
 	void subPowerModifier(std::string id);
 

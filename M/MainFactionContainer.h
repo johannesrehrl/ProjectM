@@ -2,20 +2,27 @@
 #include <SFML/Graphics.hpp>
 #include "Window.h"
 #include "AssetsHandler.h"
+#include "Government.h"
+#include "MinistryCard.h"
 
 class MainFactionContainer
 {
 private:
 	std::shared_ptr<Window> window;
 	std::shared_ptr<AssetsHandler> assetsHandler;
+	std::shared_ptr<Government> government;
+
+	std::shared_ptr<MinistryCard> financeMinistryCard;
 
 	sf::RectangleShape body;
 	sf::RectangleShape bodyShadow;
 	sf::Text headline;
 
 public:
-	MainFactionContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
+	MainFactionContainer(std::shared_ptr<Government> government, std::shared_ptr<AssetsHandler> assetsHandler,
+		std::shared_ptr<Window> window);
 	~MainFactionContainer();
+	void update();
 	void updateEndTurn();
 	void draw();
 };

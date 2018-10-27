@@ -14,7 +14,7 @@ public:
 	~CorruptionRate();
 	void updateEndTurn();
 
-	float getCorruption() { return this->corruption; }
+	float getValue() { return this->corruption; }
 	float getEndTurnChange() { return this->endTurnChange; }
 
 	void setCorruption(float val) { this->corruption = val; }

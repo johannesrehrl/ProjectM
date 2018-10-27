@@ -16,7 +16,7 @@ MainViewState::MainViewState(std::shared_ptr<Window> window, std::shared_ptr<Ass
 	this->mainStatisticsContainer = std::make_shared<MainStatisticsContainer>(this->window, this->assetsHandler, this->turnManager, 
 		this->resourceManager, this->government);
 	this->mainEventContainer = std::make_shared<MainEventContainer>(this->window, this->assetsHandler);
-	this->mainFactionContainer = std::make_shared<MainFactionContainer>(this->window, this->assetsHandler);
+	this->mainFactionContainer = std::make_shared<MainFactionContainer>(this->government, this->assetsHandler, this->window);
 
 	this->nextTurnButton = std::make_shared<Button>(assetsHandler, window, "Next Turn", Button::style::NEXT_TURN, 
 		sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 87.5, ((float)this->window->getDesktop().front().height / 100) * 85));
@@ -30,6 +30,7 @@ void MainViewState::update()
 	sf::Vector2i mousePos = sf::Mouse::getPosition();
 
 	this->nextTurnButton->update(mousePos);
+	this->mainFactionContainer->update();
 }
 
 void MainViewState::updateEndTurn()
