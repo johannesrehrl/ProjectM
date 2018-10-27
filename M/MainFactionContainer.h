@@ -13,6 +13,7 @@ private:
 	std::shared_ptr<Government> government;
 
 	std::shared_ptr<MinistryCard> financeMinistryCard;
+	std::shared_ptr<MinistryCard> defenceMinistryCard;
 
 	sf::RectangleShape body;
 	sf::RectangleShape bodyShadow;

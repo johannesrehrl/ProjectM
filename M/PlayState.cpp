@@ -31,10 +31,15 @@ void PlayState::update()
 
 			this->mainViewState->updateEndTurn();
 			this->pauseViewState->updateEndTurn();
+			this->updateEndTurn();
 
 			this->flagManager->getFlag("end_turn")->setActive(false);
 		}
 	}
+}
+void PlayState::updateEndTurn()
+{
+	this->government->updateEndTurn();
 }
 
 void PlayState::handleInput()

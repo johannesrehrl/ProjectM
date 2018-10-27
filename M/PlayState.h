@@ -32,6 +32,7 @@ public:
 	PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~PlayState();
 	void update();
+	void updateEndTurn();
 	void handleInput();
 	void draw();
 	std::string getStateChange() { return stateChange; }

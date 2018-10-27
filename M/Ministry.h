@@ -12,12 +12,8 @@ protected:
 	std::string name;
 
 public:
-	Ministry(std::string name, std::shared_ptr<Minister> minister) {
-		this->name = name; 
-		this->minister = minister;
-		this->corruptionRate = std::make_shared<CorruptionRate>();
-	}
-	~Ministry(){}
+	Ministry(std::string name, std::shared_ptr<Minister> minister);
+	~Ministry();
 
 	virtual void updateEndTurn() = 0;
 
@@ -28,4 +24,6 @@ public:
 	std::shared_ptr<Minister> getMinister() { return this->minister; }
 
 	std::shared_ptr<CorruptionRate> getCorruptionRate() { return this->corruptionRate; }
+
+	void recalcCorruption();
 };

@@ -19,6 +19,10 @@ private:
 	sf::Text powerText;
 	sf::Text loyalityText;
 
+	sf::Sprite corruptionIconSprite;
+	sf::Sprite powerIconSprite;
+	sf::Sprite loyalityIconSprite;
+
 public:
 	MinistryCard(std::shared_ptr<Ministry> ministry, sf::Vector2f size, sf::Vector2f pos, 
 		std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);

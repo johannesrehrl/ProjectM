@@ -82,9 +82,6 @@
     <Filter Include="src\ui objects\text input field">
       <UniqueIdentifier>{c0f5b673-c698-4782-9710-0ff589f0edee}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\ui objects\tooltip">
-      <UniqueIdentifier>{375bb3c0-ca71-48bc-b82d-48ca9fa274dc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\game\government">
       <UniqueIdentifier>{8c0d89f0-2f0a-4e2b-951e-a47ca00c9e99}</UniqueIdentifier>
     </Filter>
@@ -111,6 +108,9 @@
     </Filter>
     <Filter Include="src\game\game resources\power">
       <UniqueIdentifier>{0b4278e7-e5df-4710-afd3-8878e3340adf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\government\ministries\Ministry of Defence">
+      <UniqueIdentifier>{477b3c45-21f5-46cc-9bb5-71b59d58030c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -180,9 +180,6 @@
     <ClCompile Include="TextInputField.cpp">
       <Filter>src\ui objects\text input field</Filter>
     </ClCompile>
-    <ClCompile Include="Tooltip.cpp">
-      <Filter>src\ui objects\tooltip</Filter>
-    </ClCompile>
     <ClCompile Include="FinanceMinistry.cpp">
       <Filter>src\game\government\ministries\Ministry of Finance</Filter>
     </ClCompile>
@@ -203,6 +200,12 @@
     </ClCompile>
     <ClCompile Include="AbstractPower.cpp">
       <Filter>src\game\game resources\power</Filter>
+    </ClCompile>
+    <ClCompile Include="DefenceMinistry.cpp">
+      <Filter>src\game\government\ministries\Ministry of Defence</Filter>
+    </ClCompile>
+    <ClCompile Include="Ministry.cpp">
+      <Filter>src\game\government\ministries</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -278,9 +281,6 @@
     <ClInclude Include="TextInputField.h">
       <Filter>src\ui objects\text input field</Filter>
     </ClInclude>
-    <ClInclude Include="Tooltip.h">
-      <Filter>src\ui objects\tooltip</Filter>
-    </ClInclude>
     <ClInclude Include="Ministry.h">
       <Filter>src\game\government\ministries</Filter>
     </ClInclude>
@@ -310,6 +310,9 @@
     </ClInclude>
     <ClInclude Include="AbstractPower.h">
       <Filter>src\game\game resources\power</Filter>
+    </ClInclude>
+    <ClInclude Include="DefenceMinistry.h">
+      <Filter>src\game\government\ministries\Ministry of Defence</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

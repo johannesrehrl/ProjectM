@@ -133,6 +133,7 @@
     <ClCompile Include="AssetsHandler.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="CorruptionRate.cpp" />
+    <ClCompile Include="DefenceMinistry.cpp" />
     <ClCompile Include="FinanceMinistry.cpp" />
     <ClCompile Include="Flag.cpp" />
     <ClCompile Include="FlagManager.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="MainViewState.cpp" />
     <ClCompile Include="MenuItem.cpp" />
     <ClCompile Include="Minister.cpp" />
+    <ClCompile Include="Ministry.cpp" />
     <ClCompile Include="MinistryCard.cpp" />
     <ClCompile Include="NationalStability.cpp" />
     <ClCompile Include="PauseViewState.cpp" />
@@ -155,7 +157,6 @@
     <ClCompile Include="Settings.cpp" />
     <ClCompile Include="SetupState.cpp" />
     <ClCompile Include="TextInputField.cpp" />
-    <ClCompile Include="Tooltip.cpp" />
     <ClCompile Include="TurnManager.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -165,6 +166,7 @@
     <ClInclude Include="AssetsHandler.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="CorruptionRate.h" />
+    <ClInclude Include="DefenceMinistry.h" />
     <ClInclude Include="FinanceMinistry.h" />
     <ClInclude Include="Flag.h" />
     <ClInclude Include="FlagManager.h" />
@@ -190,7 +192,6 @@
     <ClInclude Include="Settings.h" />
     <ClInclude Include="SetupState.h" />
     <ClInclude Include="TextInputField.h" />
-    <ClInclude Include="Tooltip.h" />
     <ClInclude Include="TurnManager.h" />
     <ClInclude Include="UiObj.h" />
     <ClInclude Include="ViewState.h" />

@@ -33,6 +33,7 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 		playState->getGovernment()->getPresident()->setName(this->getNameInputField()->getInput());
 
 		//Temporary fix, may cause problems in the future.
+		playState->updateEndTurn();
 		playState->getMainViewState()->updateEndTurn();
 	});
 
