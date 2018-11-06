@@ -3,13 +3,15 @@
 #define LOCAL_Y ((float)this->window->getDesktop().front().height / 100) * 5
 
 MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler,
-	std::shared_ptr<TurnManager> turnManager, std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Government> government)
+	std::shared_ptr<TurnManager> turnManager, std::shared_ptr<ResourceManager> resourceManager, std::shared_ptr<Government> government, 
+	std::shared_ptr<Cursor> cursor)
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
 	this->turnManager = turnManager;
 	this->resourceManager = resourceManager;
 	this->government = government;
+	this->cursor = cursor;
 
 	this->body.setSize(sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 20, 
 		((float) this->window->getDesktop().front().height / 100) * 70));
@@ -56,6 +58,21 @@ MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window,
 
 	this->stabilitySprite.setTexture(this->assetsHandler->getTextureHolder()["stability-icon"]);
 	this->stabilitySprite.setPosition(LOCAL_X + 20, LOCAL_Y + 160 + 2);
+}
+
+void MainStatisticsContainer::update(sf::Vector2i mousePos)
+{
+	if (this->influenceText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	{
+		this->cursor->setTooltip(this->resourceManager->getInfluenceResource()->getTooltip());
+		this->cursor->setDisplayTooltip(true);
+	}
+
+	if (this->stabilityText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	{
+		this->cursor->setTooltip(this->resourceManager->getNationalStability()->getTooltip());
+		this->cursor->setDisplayTooltip(true);
+	}
 }
 
 void MainStatisticsContainer::updateEndTurn()

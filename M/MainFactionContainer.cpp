@@ -4,11 +4,12 @@
 #define CARD_SIZE 120
 
 MainFactionContainer::MainFactionContainer(std::shared_ptr<Government> government,std::shared_ptr<AssetsHandler> assetsHandler,
-	std::shared_ptr<Window> window)
+	std::shared_ptr<Window> window, std::shared_ptr<Cursor> cursor)
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
 	this->government = government;
+	this->cursor = cursor;
 
 	this->body.setSize(sf::Vector2f(((float)this->window->getDesktop().front().width / 100) * 20,
 		((float)this->window->getDesktop().front().height / 100) * 90));

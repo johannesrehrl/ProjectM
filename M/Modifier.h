@@ -14,7 +14,7 @@ private:
 public:
 	Modifier(std::string id, std::string shortText, std::string longText, float value)
 	{
-		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = false;
+		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = false; this->duration = 0;
 	}
 	Modifier(std::string id, std::string shortText, std::string longText, float value, int duration)
 	{

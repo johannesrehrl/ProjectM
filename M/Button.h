@@ -1,11 +1,10 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "UiObj.h"
 #include "AssetsHandler.h"
 #include "Window.h"
 #include <string>
 
-class Button : public UiObj
+class Button
 {
 private:
 	std::shared_ptr<AssetsHandler> assetsHandler;

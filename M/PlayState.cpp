@@ -1,18 +1,20 @@
 #include "PlayState.h"
 
-PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
+PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Cursor> cursor)
 {
 	this->stateChange = "";
 	this->window = window;
 	this->assetsHandler = assetsHandler;
+	this->cursor = cursor;
 	this->flagManager = std::make_shared<FlagManager>();
 	this->turnManager = std::make_shared<TurnManager>(this->flagManager);
-	this->resourceManager = std::make_shared<ResourceManager>(std::make_shared<InfluenceResource>(5), std::make_shared<NationalStability>());
+	this->resourceManager = std::make_shared<ResourceManager>(std::make_shared<InfluenceResource>(5, this->window, this->assetsHandler),
+		std::make_shared<NationalStability>(this->window, this->assetsHandler));
 
 	this->government = std::make_shared<Government>();
 
 	this->mainViewState = std::make_shared<MainViewState>(this->window, this->assetsHandler, this->turnManager, this->flagManager, 
-		this->resourceManager, this->government);
+		this->resourceManager, this->government, this->cursor);
 	this->pauseViewState = std::make_shared<PauseViewState>(this->window, this->assetsHandler);
 	this->currentViewState = this->mainViewState;
 }

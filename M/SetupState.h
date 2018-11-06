@@ -20,7 +20,7 @@ private:
 	sf::Text inputLabelText;
 	sf::Text signatureText;
 	std::shared_ptr<TextInputField> nameInputField;
-	std::shared_ptr<Button> singButton;
+	std::shared_ptr<Button> signButton;
 
 	sf::Sprite presidentialOrderSprite;
 

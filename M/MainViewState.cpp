@@ -2,7 +2,7 @@
 
 MainViewState::MainViewState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler,
 	std::shared_ptr<TurnManager> turnManager, std::shared_ptr<FlagManager> flagManager, std::shared_ptr<ResourceManager> resourceManager,
-	std::shared_ptr<Government> government)
+	std::shared_ptr<Government> government, std::shared_ptr<Cursor> cursor)
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
@@ -10,13 +10,14 @@ MainViewState::MainViewState(std::shared_ptr<Window> window, std::shared_ptr<Ass
 	this->flagManager = flagManager;
 	this->resourceManager = resourceManager;
 	this->government = government;
+	this->cursor = cursor;
 
 	this->stateChange = "";
 
 	this->mainStatisticsContainer = std::make_shared<MainStatisticsContainer>(this->window, this->assetsHandler, this->turnManager, 
-		this->resourceManager, this->government);
-	this->mainEventContainer = std::make_shared<MainEventContainer>(this->window, this->assetsHandler);
-	this->mainFactionContainer = std::make_shared<MainFactionContainer>(this->government, this->assetsHandler, this->window);
+		this->resourceManager, this->government, this->cursor);
+	this->mainEventContainer = std::make_shared<MainEventContainer>(this->window, this->assetsHandler, this->cursor);
+	this->mainFactionContainer = std::make_shared<MainFactionContainer>(this->government, this->assetsHandler, this->window, this->cursor);
 
 	this->nextTurnButton = std::make_shared<Button>(assetsHandler, window, "Next Turn", Button::style::NEXT_TURN, 
 		sf::Vector2f(((float) this->window->getDesktop().front().width / 100) * 87.5, ((float)this->window->getDesktop().front().height / 100) * 85));
@@ -31,6 +32,7 @@ void MainViewState::update()
 
 	this->nextTurnButton->update(mousePos);
 	this->mainFactionContainer->update();
+	this->mainStatisticsContainer->update(mousePos);
 }
 
 void MainViewState::updateEndTurn()

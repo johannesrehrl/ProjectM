@@ -2,10 +2,11 @@
 #define LOCAL_X ((float)this->window->getDesktop().front().width / 100) * 25
 #define LOCAL_Y ((float)this->window->getDesktop().front().height / 100) * 5
 
-MainEventContainer::MainEventContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
+MainEventContainer::MainEventContainer(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Cursor> cursor)
 {
 	this->window = window;
 	this->assetsHandler = assetsHandler;
+	this->cursor = cursor;
 
 	this->body.setSize(sf::Vector2f(((float)this->window->getDesktop().front().width / 100) * 50, 
 		((float)this->window->getDesktop().front().height / 100) * 90));

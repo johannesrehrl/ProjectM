@@ -112,6 +112,12 @@
     <Filter Include="src\game\government\ministries\Ministry of Defence">
       <UniqueIdentifier>{477b3c45-21f5-46cc-9bb5-71b59d58030c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\ui objects\tooltip">
+      <UniqueIdentifier>{d2764189-697e-4de3-b14d-7ebc2b281701}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\cursor">
+      <UniqueIdentifier>{86158f77-53c3-4713-8584-fa3376338d65}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -207,6 +213,12 @@
     <ClCompile Include="Ministry.cpp">
       <Filter>src\game\government\ministries</Filter>
     </ClCompile>
+    <ClCompile Include="Tooltip.cpp">
+      <Filter>src\ui objects\tooltip</Filter>
+    </ClCompile>
+    <ClCompile Include="Cursor.cpp">
+      <Filter>src\cursor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -217,9 +229,6 @@
     </ClInclude>
     <ClInclude Include="Settings.h">
       <Filter>src\settings</Filter>
-    </ClInclude>
-    <ClInclude Include="UiObj.h">
-      <Filter>src\ui objects</Filter>
     </ClInclude>
     <ClInclude Include="MenuItem.h">
       <Filter>src\ui objects\menu item</Filter>
@@ -313,6 +322,12 @@
     </ClInclude>
     <ClInclude Include="DefenceMinistry.h">
       <Filter>src\game\government\ministries\Ministry of Defence</Filter>
+    </ClInclude>
+    <ClInclude Include="Tooltip.h">
+      <Filter>src\ui objects\tooltip</Filter>
+    </ClInclude>
+    <ClInclude Include="Cursor.h">
+      <Filter>src\cursor</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

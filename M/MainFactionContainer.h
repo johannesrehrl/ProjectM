@@ -4,6 +4,7 @@
 #include "AssetsHandler.h"
 #include "Government.h"
 #include "MinistryCard.h"
+#include "Cursor.h"
 
 class MainFactionContainer
 {
@@ -11,6 +12,7 @@ private:
 	std::shared_ptr<Window> window;
 	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<Government> government;
+	std::shared_ptr<Cursor> cursor;
 
 	std::shared_ptr<MinistryCard> financeMinistryCard;
 	std::shared_ptr<MinistryCard> defenceMinistryCard;
@@ -21,7 +23,7 @@ private:
 
 public:
 	MainFactionContainer(std::shared_ptr<Government> government, std::shared_ptr<AssetsHandler> assetsHandler,
-		std::shared_ptr<Window> window);
+		std::shared_ptr<Window> window, std::shared_ptr<Cursor> cursor);
 	~MainFactionContainer();
 	void update();
 	void updateEndTurn();

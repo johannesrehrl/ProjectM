@@ -1,10 +1,9 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-#include "UiObj.h"
 #include "AssetsHandler.h"
 #include "Window.h"
 
-class MenuItem : public UiObj
+class MenuItem
 {
 private:
 	std::shared_ptr<AssetsHandler> assetsHandler;

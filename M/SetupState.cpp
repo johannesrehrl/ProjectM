@@ -27,14 +27,17 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 	this->inputLabelText.setString("Please enter your name:");
 	this->inputLabelText.setPosition(sf::Vector2f(100,100));
 
-	this->singButton = std::make_shared<Button>(this->assetsHandler, this->window, "Sign", Button::style::STANDARD, sf::Vector2f(350, 250));
-	this->singButton->setOnSelect([this, playState] {
+	this->signButton = std::make_shared<Button>(this->assetsHandler, this->window, "Sign", Button::style::STANDARD, sf::Vector2f(350, 250));
+	this->signButton->setOnSelect([this, playState] {
 		this->stateChange = "PLAY";
 		playState->getGovernment()->getPresident()->setName(this->getNameInputField()->getInput());
 
 		//Temporary fix, may cause problems in the future.
 		playState->updateEndTurn();
 		playState->getMainViewState()->updateEndTurn();
+
+		playState->getResourceManager()->getInfluenceResource()->makeTooltip();
+		playState->getResourceManager()->getNationalStability()->makeTooltip();
 	});
 
 	this->presidentialOrderSprite.setTexture(this->assetsHandler->getTextureHolder()["presidential-order-00001"]);
@@ -51,7 +54,7 @@ void SetupState::update()
 	sf::Vector2i mousePos = sf::Mouse::getPosition();
 
 	this->nameInputField->update();
-	this->singButton->update(mousePos);
+	this->signButton->update(mousePos);
 
 	this->signatureText.setString(this->nameInputField->getInput());
 	sf::FloatRect textRect = this->signatureText.getLocalBounds();
@@ -66,7 +69,7 @@ void SetupState::handleInput()
 void SetupState::draw()
 {
 	this->nameInputField->draw();
-	this->singButton->draw();
+	this->signButton->draw();
 	this->window->getWindow()->draw(this->inputLabelText);
 	this->window->getWindow()->draw(this->presidentialOrderSprite);
 	this->window->getWindow()->draw(this->signatureText);

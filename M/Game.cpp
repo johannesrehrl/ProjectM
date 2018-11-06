@@ -10,6 +10,8 @@ Game::Game(std::shared_ptr<Settings> settings, std::shared_ptr<AssetsHandler> as
 	this->window->getWindow()->setVerticalSyncEnabled(this->settings->getUseVSync());
 	this->running = true;
 
+	this->cursor = std::make_shared<Cursor>(this->assetsHandler);
+
 	this->fpsText.setFont(this->assetsHandler->getFontHolder()["expressway"]);
 	this->fpsText.setFillColor(sf::Color::Red);
 	this->fpsText.setCharacterSize(20);
@@ -20,7 +22,8 @@ Game::Game(std::shared_ptr<Settings> settings, std::shared_ptr<AssetsHandler> as
 
 void Game::update()
 {
-	running = this->window->isRunning();
+	this->running = this->window->isRunning();
+	this->cursor->update();
 	this->assetsHandler->getActionMap().update(*(this->window->getWindow()));
 	this->window->update();
 	this->currentGameState->update();
@@ -38,6 +41,7 @@ void Game::draw()
 	}
 	
 	this->currentGameState->draw();
+	this->cursor->draw();
 	window->getWindow()->display();
 }
 
@@ -53,7 +57,7 @@ void Game::checkStateChange()
 	else if (this->currentGameState->getStateChange() == "SETUP")
 	{
 		this->currentGameState.reset();
-		this->playState = std::make_shared<PlayState>(this->window, this->assetsHandler);
+		this->playState = std::make_shared<PlayState>(this->window, this->assetsHandler, this->cursor);
 		if (this->playState != nullptr) { this->playState->setStateChange(""); }
 		this->currentGameState = std::make_unique<SetupState>(this->window, this->assetsHandler, this->playState);
 	}

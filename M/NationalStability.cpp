@@ -1,8 +1,12 @@
 #include "NationalStability.h"
 
-NationalStability::NationalStability()
+NationalStability::NationalStability(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
 {
 	this->stability = 0;
+	this->window = window;
+	this->assetsHandler = assetsHandler;
+
+	this->myTooltip = std::make_shared<Tooltip>(this->window, this->assetsHandler);
 }
 
 void NationalStability::updateEndTurn()
@@ -22,6 +26,35 @@ void NationalStability::updateEndTurn()
 		}
 
 		this->stability += this->resourceModifier.at(i)->getValue();
+	}
+
+	this->makeTooltip();
+}
+
+void NationalStability::makeTooltip()
+{
+	this->myTooltip->setHeadLine("Stability Modifiers");
+
+	this->myTooltip->clearAllLines();
+
+	for (int i = 0; i < this->resourceModifier.size(); i++)
+	{
+		if (this->resourceModifier.at(i)->getValue() < 0)
+		{
+			this->myTooltip->addLine(std::to_string((int)this->resourceModifier.at(i)->getValue()) + " " +
+				this->resourceModifier.at(i)->getShortText());
+		}
+
+		else
+		{
+			this->myTooltip->addLine("+" + std::to_string((int)this->resourceModifier.at(i)->getValue()) + " " +
+				this->resourceModifier.at(i)->getShortText());
+		}
+
+		if (this->resourceModifier.at(i)->isFinite())
+		{
+			this->myTooltip->addLine("Duration: " + std::to_string((int)this->resourceModifier.at(i)->getDuration()) + " months.");
+		}
 	}
 }
 

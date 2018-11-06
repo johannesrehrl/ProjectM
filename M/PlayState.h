@@ -1,6 +1,7 @@
 #pragma once
 #include "GameState.h"
 #include "Window.h"
+#include "Cursor.h"
 #include "AssetsHandler.h"
 #include "ViewState.h"
 #include "MainViewState.h"
@@ -21,6 +22,7 @@ private:
 	std::shared_ptr<TurnManager> turnManager;
 	std::shared_ptr<FlagManager> flagManager;
 	std::shared_ptr<ResourceManager> resourceManager;
+	std::shared_ptr<Cursor> cursor;
 
 	std::shared_ptr<Government> government;
 
@@ -29,7 +31,7 @@ private:
 	std::shared_ptr<ViewState> pauseViewState;
 
 public:
-	PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
+	PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Cursor> cursor);
 	~PlayState();
 	void update();
 	void updateEndTurn();
