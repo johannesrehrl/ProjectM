@@ -1,8 +1,12 @@
 #include "AbstractPower.h"
 
-AbstractPower::AbstractPower()
+AbstractPower::AbstractPower(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
 {
+	this->window = window;
+	this->assetsHandler = assetsHandler;
 	this->power = 0;
+
+	this->myTooltip = std::make_shared<Tooltip>(this->window, this->assetsHandler);
 }
 
 void AbstractPower::updateEndTurn()
@@ -32,6 +36,35 @@ void AbstractPower::updateEndTurn()
 	else if (this->power > 100)
 	{
 		this->power = 100;
+	}
+
+	this->makeTooltip();
+}
+
+void AbstractPower::makeTooltip()
+{
+	this->myTooltip->setHeadLine("Power Modifiers");
+
+	this->myTooltip->clearAllLines();
+
+	for (int i = 0; i < this->powerModifiers.size(); i++)
+	{
+		if (this->powerModifiers.at(i)->getValue() < 0)
+		{
+			this->myTooltip->addLine(std::to_string((int)this->powerModifiers.at(i)->getValue()) + " " +
+				this->powerModifiers.at(i)->getShortText());
+		}
+
+		else
+		{
+			this->myTooltip->addLine("+" + std::to_string((int)this->powerModifiers.at(i)->getValue()) + " " +
+				this->powerModifiers.at(i)->getShortText());
+		}
+
+		if (this->powerModifiers.at(i)->isFinite())
+		{
+			this->myTooltip->addLine("Duration: " + std::to_string((int)this->powerModifiers.at(i)->getDuration()) + " months.");
+		}
 	}
 }
 

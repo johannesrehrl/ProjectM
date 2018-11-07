@@ -4,10 +4,14 @@
 #include "Modifier.h"
 #include "AbstractLoyality.h"
 #include "AbstractPower.h"
+#include "Window.h"
+#include "AssetsHandler.h"
 
 class Minister
 {
 private:
+	std::shared_ptr<Window> window;
+	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::string id;
 	std::string name;
 	int age;
@@ -16,7 +20,7 @@ private:
 	std::shared_ptr<AbstractPower> power;
 
 public:
-	Minister(std::string id, std::string name, int age);
+	Minister(std::string id, std::string name, int age, std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~Minister();
 	void updateEndTurn();
 

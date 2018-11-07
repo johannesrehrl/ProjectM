@@ -2,18 +2,22 @@
 #include "President.h"
 #include "Ministry.h"
 #include "Minister.h"
+#include "Window.h"
+#include "AssetsHandler.h"
 #include "FinanceMinistry.h"
 #include "DefenceMinistry.h"
 
 class Government
 {
 private:
+	std::shared_ptr<Window> window;
+	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<President> president;
 	std::shared_ptr<FinanceMinistry> financeMinistry;
 	std::shared_ptr<FinanceMinistry> defenceMinistry;
 
 public:
-	Government();
+	Government(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~Government();
 	void updateEndTurn();
 

@@ -2,6 +2,8 @@
 #include <vector>
 #include "Modifier.h"
 #include "Tooltip.h"
+#include "Window.h"
+#include "AssetsHandler.h"
 
 class NationalStability
 {

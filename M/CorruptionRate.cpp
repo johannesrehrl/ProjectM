@@ -1,9 +1,13 @@
 #include "CorruptionRate.h"
 
-CorruptionRate::CorruptionRate()
+CorruptionRate::CorruptionRate(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
 {
+	this->window = window;
+	this->assetsHandler = assetsHandler;
 	this->corruption = 0;
 	this->endTurnChange = 0;
+
+	this->myTooltip = std::make_shared<Tooltip>(this->window, this->assetsHandler);
 }
 
 void CorruptionRate::updateEndTurn()
@@ -35,6 +39,35 @@ void CorruptionRate::updateEndTurn()
 	else if (this->corruption > 100)
 	{
 		this->corruption = 100;
+	}
+
+	this->makeTooltip();
+}
+
+void CorruptionRate::makeTooltip()
+{
+	this->myTooltip->setHeadLine("Corruption Modifiers");
+
+	this->myTooltip->clearAllLines();
+
+	for (int i = 0; i < this->resourceModifier.size(); i++)
+	{
+		if (this->resourceModifier.at(i)->getValue() < 0)
+		{
+			this->myTooltip->addLine(std::to_string((int)this->resourceModifier.at(i)->getValue()) + " " +
+				this->resourceModifier.at(i)->getShortText());
+		}
+
+		else
+		{
+			this->myTooltip->addLine("+" + std::to_string((int)this->resourceModifier.at(i)->getValue()) + " " +
+				this->resourceModifier.at(i)->getShortText());
+		}
+
+		if (this->resourceModifier.at(i)->isFinite())
+		{
+			this->myTooltip->addLine("Duration: " + std::to_string((int)this->resourceModifier.at(i)->getDuration()) + " months.");
+		}
 	}
 }
 

@@ -1,11 +1,13 @@
 #include "MinistryCard.h"
 
 MinistryCard::MinistryCard(std::shared_ptr<Ministry> ministry, sf::Vector2f size, sf::Vector2f pos, std::shared_ptr<Window> window,
-	std::shared_ptr<AssetsHandler> assetsHandler)
+	std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<Cursor> cursor)
 {
 	this->ministry = ministry;
 	this->window = window;
+	this->cursor = cursor;
 	this->assetsHandler = assetsHandler;
+	this->cursor = cursor;
 
 	this->body.setPosition(pos);
 	this->body.setSize(size);
@@ -61,6 +63,24 @@ void MinistryCard::update(sf::Vector2i mousePos)
 	else
 	{
 		this->body.setFillColor(this->assetsHandler->getColorHolder()["grey170"]);
+	}
+
+	if (this->corruptionText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	{
+		this->cursor->setTooltip(this->ministry->getCorruptionRate()->getTooltip());
+		this->cursor->setDisplayTooltip(true);
+	}
+
+	if (this->powerText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	{
+		this->cursor->setTooltip(this->ministry->getMinister()->getPower()->getTooltip());
+		this->cursor->setDisplayTooltip(true);
+	}
+
+	if (this->loyalityText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	{
+		this->cursor->setTooltip(this->ministry->getMinister()->getLoyality()->getTooltip());
+		this->cursor->setDisplayTooltip(true);
 	}
 }
 

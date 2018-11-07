@@ -2,17 +2,21 @@
 #include <string>
 #include "Minister.h"
 #include "Modifier.h"
+#include "Window.h"
+#include "AssetsHandler.h"
 #include "CorruptionRate.h"
 
 class Ministry
 {
 protected:
+	std::shared_ptr<Window> window;
+	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<Minister> minister;
 	std::shared_ptr<CorruptionRate> corruptionRate;
 	std::string name;
 
 public:
-	Ministry(std::string name, std::shared_ptr<Minister> minister);
+	Ministry(std::string name, std::shared_ptr<Minister> minister, std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~Ministry();
 
 	virtual void updateEndTurn() = 0;

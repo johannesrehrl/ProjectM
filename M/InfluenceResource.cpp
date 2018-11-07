@@ -2,9 +2,9 @@
 
 InfluenceResource::InfluenceResource(float influence, std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler)
 {
-	this->influence = influence;
 	this->window = window;
 	this->assetsHandler = assetsHandler;
+	this->influence = influence;
 	this->endTurnChange = 0;
 
 	this->myTooltip = std::make_shared<Tooltip>(this->window, this->assetsHandler);

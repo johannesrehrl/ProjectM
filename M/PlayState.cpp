@@ -11,7 +11,7 @@ PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandl
 	this->resourceManager = std::make_shared<ResourceManager>(std::make_shared<InfluenceResource>(5, this->window, this->assetsHandler),
 		std::make_shared<NationalStability>(this->window, this->assetsHandler));
 
-	this->government = std::make_shared<Government>();
+	this->government = std::make_shared<Government>(this->window, this->assetsHandler);
 
 	this->mainViewState = std::make_shared<MainViewState>(this->window, this->assetsHandler, this->turnManager, this->flagManager, 
 		this->resourceManager, this->government, this->cursor);

@@ -9,7 +9,7 @@ private:
 
 
 public:
-	FinanceMinistry(std::string name, std::shared_ptr<Minister> minister);
+	FinanceMinistry(std::string name, std::shared_ptr<Minister> minister, std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~FinanceMinistry();
 
 	void updateEndTurn();

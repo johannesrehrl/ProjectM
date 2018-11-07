@@ -28,11 +28,11 @@ MainFactionContainer::MainFactionContainer(std::shared_ptr<Government> governmen
 
 	this->financeMinistryCard = std::make_shared<MinistryCard>(this->government->getFinanceMinistry(),
 		sf::Vector2f(((float)this->window->getDesktop().front().width / 100) * 20, 115),
-		sf::Vector2f(LOCAL_X, LOCAL_Y + CARD_SIZE), this->window, this->assetsHandler);
+		sf::Vector2f(LOCAL_X, LOCAL_Y + CARD_SIZE), this->window, this->assetsHandler, this->cursor);
 
 	this->defenceMinistryCard = std::make_shared<MinistryCard>(this->government->getDefenceMinistry(),
 		sf::Vector2f(((float)this->window->getDesktop().front().width / 100) * 20, 115),
-		sf::Vector2f(LOCAL_X, LOCAL_Y + CARD_SIZE * 2), this->window, this->assetsHandler);
+		sf::Vector2f(LOCAL_X, LOCAL_Y + CARD_SIZE * 2), this->window, this->assetsHandler, this->cursor);
 }
 
 void MainFactionContainer::updateEndTurn()
