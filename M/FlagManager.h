@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <Thor/Math.hpp>
 #include "Flag.h"
 
 class FlagManager
@@ -10,7 +11,7 @@ private:
 public:
 	FlagManager();
 	~FlagManager();
-	void update();
+	void updateEndTurn(int month, int year);
 
 	bool doesFlagExist(std::string id);
 	std::shared_ptr<Flag> getFlag(std::string id);

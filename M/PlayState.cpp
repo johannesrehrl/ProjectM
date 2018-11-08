@@ -34,6 +34,7 @@ void PlayState::update()
 			this->mainViewState->updateEndTurn();
 			this->pauseViewState->updateEndTurn();
 			this->updateEndTurn();
+			this->flagManager->updateEndTurn(this->turnManager->getMonth(), this->turnManager->getYear());
 
 			this->flagManager->getFlag("end_turn")->setActive(false);
 		}
