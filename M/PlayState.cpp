@@ -10,6 +10,7 @@ PlayState::PlayState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandl
 	this->turnManager = std::make_shared<TurnManager>(this->flagManager);
 	this->resourceManager = std::make_shared<ResourceManager>(std::make_shared<InfluenceResource>(5, this->window, this->assetsHandler),
 		std::make_shared<NationalStability>(this->window, this->assetsHandler));
+	this->eventManager = std::make_shared<EventManager>();
 
 	this->government = std::make_shared<Government>(this->window, this->assetsHandler);
 
@@ -34,7 +35,8 @@ void PlayState::update()
 			this->mainViewState->updateEndTurn();
 			this->pauseViewState->updateEndTurn();
 			this->updateEndTurn();
-			this->flagManager->updateEndTurn(this->turnManager->getMonth(), this->turnManager->getYear());
+			this->flagManager->updateEndTurn();
+			this->eventManager->updateEndTurn(this->turnManager->getMonth(), this->turnManager->getYear());
 
 			this->flagManager->getFlag("end_turn")->setActive(false);
 		}

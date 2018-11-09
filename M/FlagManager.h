@@ -11,7 +11,7 @@ private:
 public:
 	FlagManager();
 	~FlagManager();
-	void updateEndTurn(int month, int year);
+	void updateEndTurn();
 
 	bool doesFlagExist(std::string id);
 	std::shared_ptr<Flag> getFlag(std::string id);

@@ -12,17 +12,19 @@
 #include "InfluenceResource.h"
 #include "NationalStability.h"
 #include "Government.h"
+#include "EventManager.h"
 
 class PlayState : public GameState
 {
 private:
 	std::string stateChange;
 	std::shared_ptr<Window> window;
+	std::shared_ptr<Cursor> cursor;
 	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<TurnManager> turnManager;
 	std::shared_ptr<FlagManager> flagManager;
 	std::shared_ptr<ResourceManager> resourceManager;
-	std::shared_ptr<Cursor> cursor;
+	std::shared_ptr<EventManager> eventManager;
 
 	std::shared_ptr<Government> government;
 

@@ -135,6 +135,8 @@
     <ClCompile Include="CorruptionRate.cpp" />
     <ClCompile Include="Cursor.cpp" />
     <ClCompile Include="DefenceMinistry.cpp" />
+    <ClCompile Include="Event.cpp" />
+    <ClCompile Include="EventManager.cpp" />
     <ClCompile Include="FinanceMinistry.cpp" />
     <ClCompile Include="Flag.cpp" />
     <ClCompile Include="FlagManager.cpp" />
@@ -170,6 +172,8 @@
     <ClInclude Include="CorruptionRate.h" />
     <ClInclude Include="Cursor.h" />
     <ClInclude Include="DefenceMinistry.h" />
+    <ClInclude Include="Event.h" />
+    <ClInclude Include="EventManager.h" />
     <ClInclude Include="FinanceMinistry.h" />
     <ClInclude Include="Flag.h" />
     <ClInclude Include="FlagManager.h" />
