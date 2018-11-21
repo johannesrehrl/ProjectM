@@ -13,6 +13,7 @@
 #include "NationalStability.h"
 #include "Government.h"
 #include "EventManager.h"
+#include "MinisterManager.h"
 
 class PlayState : public GameState
 {
@@ -27,6 +28,7 @@ private:
 	std::shared_ptr<EventManager> eventManager;
 
 	std::shared_ptr<Government> government;
+	std::shared_ptr<MinisterManager> ministerManager;
 
 	std::shared_ptr<ViewState> currentViewState;
 	std::shared_ptr<ViewState> mainViewState;
@@ -47,6 +49,7 @@ public:
 	std::shared_ptr<FlagManager> getFlagManager() { return this->flagManager; }
 	std::shared_ptr<TurnManager> getTurnManager() { return this->turnManager; }
 	std::shared_ptr<ViewState> getMainViewState() { return this->mainViewState; }
+	std::shared_ptr<MinisterManager> getMinisterManager() { return this->ministerManager; }
 
 	std::shared_ptr<Government> getGovernment() { return this->government; }
 };

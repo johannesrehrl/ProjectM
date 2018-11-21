@@ -18,6 +18,7 @@ Game::Game(std::shared_ptr<Settings> settings, std::shared_ptr<AssetsHandler> as
 	this->fpsText.setPosition(sf::Vector2f(20,20));
 
 	this->currentGameState = std::make_shared<MainMenuState>(this->settings, this->window, this->assetsHandler);
+	this->playState = std::make_shared<PlayState>(this->window, this->assetsHandler, this->cursor);
 }
 
 void Game::update()
@@ -49,7 +50,7 @@ void Game::checkStateChange()
 {
 	if (this->currentGameState->getStateChange() == "MAINMENU")
 	{
-		if (this->playState != nullptr) { this->playState->setStateChange(""); } 
+		this->playState->setStateChange("");
 		this->currentGameState.reset();
 		this->currentGameState = std::make_unique<MainMenuState>(this->settings, this->window, this->assetsHandler);
 	}
@@ -57,14 +58,13 @@ void Game::checkStateChange()
 	else if (this->currentGameState->getStateChange() == "SETUP")
 	{
 		this->currentGameState.reset();
-		this->playState = std::make_shared<PlayState>(this->window, this->assetsHandler, this->cursor);
-		if (this->playState != nullptr) { this->playState->setStateChange(""); }
+		this->playState->setStateChange("");
 		this->currentGameState = std::make_unique<SetupState>(this->window, this->assetsHandler, this->playState);
 	}
 
 	else if (this->currentGameState->getStateChange() == "PLAY")
 	{
-		if (this->playState != nullptr) { this->playState->setStateChange(""); }
+		this->playState->setStateChange("");
 		this->currentGameState.reset();
 		this->currentGameState = this->playState;
 	}

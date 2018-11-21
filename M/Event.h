@@ -1,60 +1,89 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include <THOR/Math.hpp>
 #include <string>
 #include <vector>
 #include "Flag.h"
+#include "FlagManager.h"
 #include "Modifier.h"
 
 class Event
 {
 private:
+	std::shared_ptr<FlagManager> flagManager;
+
+	bool dead;
+	//True if event can only be fired once.
+	bool deadUntoFire;
 	bool active;
 	std::string id;
 	std::string headline;
 	std::string text;
 	std::vector<std::string> optionText;
 
-	// Possible flags added by option choosen.
-	std::map<int, std::shared_ptr<Flag>> addFlagResults;
-	std::map<int, std::string> subFlagResults;
+	//Event only able to fire within range of dates.
+	bool hasDateRange;
+	bool rangeActive;
+	float rangeChance;
+	sf::Vector2i lowerDateLimit;
+	sf::Vector2i upperDateLimit;
 
-	// Possible plain influence change by option choosen.
-	std::map<int, float> plainInfluenceResults;
+	//Event is counting down until it is fired.
+	bool hasCounter;
+	bool counterActive;
+	bool startCounter;
+	float counterChance;
+	int monthsUntilFire;
 
-	// Possible monthly influence change by option choosen.
-	std::map<int, std::shared_ptr<Modifier>> addInfluenceModResults;
-	std::map<int, std::shared_ptr<Modifier>> subInfluenceModResults;
+	//Event fired by a combination of flags.
+	bool hasFlagDependency;
+	bool flagActive;
+	float flagChance;
+	std::vector<std::vector<std::string>> flagDependencies;
 
-	// Possible total stability change by option choosen.
-	std::map<int, std::shared_ptr<Modifier>> addStabilityModResults;
-	std::map<int, std::shared_ptr<Modifier>> subStabilityModResults;
-
-	// Possible power change of a specific Ministry by option choosen.
-	std::map<int, std::string, std::shared_ptr<Modifier>> addMinistryPowerModResults;
-	std::map<int, std::string, std::shared_ptr<Modifier>> subMinistryPowerModResults;
-
-	// Possible loyality change of a specific Ministry by option choosen.
-	std::map<int, std::string, std::shared_ptr<Modifier>> addMinistryLoyalityModResults;
-	std::map<int, std::string, std::shared_ptr<Modifier>> subMinistryLoyalityPowerModResults;
-
-	std::shared_ptr<std::vector<std::string>> flagDependencies;
-	std::shared_ptr<sf::Vector2i> dateDependency;
-	std::shared_ptr<sf::Vector2i> endDateDependency;
-	int dateChance;
-	bool dateDependent;
-
+	//Event is fired if a combination of dependencies (flag, counter, date range, etc...) is true.
+	std::vector<std::vector<std::string>> linkedDependencies;
 public:
-	Event();
+	Event(bool dead,
+	bool deadUntoFire,
+	std::string id,
+	std::string headline,
+	std::string text,
+	std::vector<std::string> optionText,
+
+	bool hasDateRange,
+	bool rangeActive,
+	float rangeChance,
+	sf::Vector2i lowerDateLimit,
+	sf::Vector2i upperDateLimit,
+
+	bool hasCounter,
+	bool counterActive, 
+	bool startCounter,
+	float counterChance,
+	int monthsUntilFire,
+
+	bool hasFlagDependency,
+	bool flagActive,
+	float flagChance,
+	std::vector<std::vector<std::string>> flagDependencies,
+
+	std::vector<std::vector<std::string>> linkedDependencies,
+
+	std::shared_ptr<FlagManager> flagManager
+	);
 	~Event();
+
+	void calcActive(int month, int year);
+	void updateEndTurn() { if (dead) { return; } if (startCounter) { this->monthsUntilFire--; } }
 
 	std::string getId() { return this->id; }
 	bool isActive() { return this->active; }
 	void setActive(bool val) { this->active = val; }
 
-	std::shared_ptr<std::vector<std::string>> getFlagDependencies() { return this->flagDependencies; }
-	std::shared_ptr<sf::Vector2i> getDateDependencies() { return this->dateDependency; }
-	std::shared_ptr<sf::Vector2i> getEndDateDependencies() { return this->endDateDependency; }
-	int getDateChance() { return dateChance; }
-	void setDateChance(int val) { this->dateChance = val; }
-	bool isDateDependent() { return this->dateDependent; }
+	void kickOffCounter() { this->startCounter = true; }
+	void endCounter() { this->startCounter = false; }
+
+	void kill() { this->dead = true; }
+	bool isDeadUntoFire() { return this->deadUntoFire; }
 };

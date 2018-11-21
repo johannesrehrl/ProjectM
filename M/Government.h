@@ -6,18 +6,20 @@
 #include "AssetsHandler.h"
 #include "FinanceMinistry.h"
 #include "DefenceMinistry.h"
+#include "MinisterManager.h"
 
 class Government
 {
 private:
 	std::shared_ptr<Window> window;
 	std::shared_ptr<AssetsHandler> assetsHandler;
+	std::shared_ptr<MinisterManager> ministerManager;
 	std::shared_ptr<President> president;
 	std::shared_ptr<FinanceMinistry> financeMinistry;
 	std::shared_ptr<FinanceMinistry> defenceMinistry;
 
 public:
-	Government(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
+	Government(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler, std::shared_ptr<MinisterManager> ministerManager);
 	~Government();
 	void updateEndTurn();
 

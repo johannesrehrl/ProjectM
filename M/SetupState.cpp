@@ -7,6 +7,11 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 	this->assetsHandler = assetsHandler;
 	this->playState = playState;
 
+	this->gameSetupLoader = std::make_shared<GameSetupLoader>(this->playState, this->window, this->assetsHandler);
+
+	//Loading game data.
+	this->gameSetupLoader->load();
+
 	this->playState->getResourceManager()->getInfluenceResource()->addInfluenceModifier
 	(std::make_shared<Modifier>("base", "Base influence", "Base influence per month.", 2));
 	this->playState->getResourceManager()->getInfluenceResource()->addInfluenceModifier
@@ -47,6 +52,9 @@ SetupState::SetupState(std::shared_ptr<Window> window, std::shared_ptr<AssetsHan
 	this->signatureText.setCharacterSize(28);
 	this->signatureText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
 	this->signatureText.setPosition(this->window->getDesktop().front().width - 1000 + 220, 100 + 600);
+
+	this->playState->getGovernment()->getFinanceMinistry()->setMinister(this->playState->getMinisterManager()->getMinisterById("dieter_arfeld"));
+	this->playState->getGovernment()->getDefenceMinistry()->setMinister(this->playState->getMinisterManager()->getMinisterById("herman_klen"));
 }
 
 void SetupState::update()

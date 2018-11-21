@@ -1,0 +1,94 @@
+{
+	"allMinisters": [
+		{
+			"id": "dieter_arfeld",
+			"name": "Dieter Arfeld",
+			"age": 652,
+			"available": true,
+			"loyality": {
+				"loyalityModifiers": [
+					{
+						"id": "base",
+						"shortText": "Base loyality.",
+						"longText": "Base loyality.",
+						"value": 65,
+						"finite": false,
+						"duration": 0
+					}
+				]
+			},
+			"power": {
+				"powerModifiers": [
+					{
+						"id": "base",
+						"shortText": "Base power.",
+						"longText": "Base power.",
+						"value": 40,
+						"finite": false,
+						"duration": 0
+					}
+				]
+			}
+		},
+		{
+			"id": "herman_klen",
+			"name": "Herman Klen",
+			"age": 554,
+			"available": true,
+			"loyality": {
+				"loyalityModifiers": [
+					{
+						"id": "base",
+						"shortText": "Base loyality.",
+						"longText": "Base loyality.",
+						"value": 40,
+						"finite": false,
+						"duration": 0
+					}
+				]
+			},
+			"power": {
+				"powerModifiers": [
+					{
+						"id": "base",
+						"shortText": "Base power.",
+						"longText": "Base power.",
+						"value": 75,
+						"finite": false,
+						"duration": 0
+					}
+				]
+			}
+		},
+		{
+			"id": "josef_lett",
+			"name": "Josef Lett",
+			"age": 504,
+			"available": true,
+			"loyality": {
+				"loyalityModifiers": [
+					{
+						"id": "base",
+						"shortText": "Base loyality.",
+						"longText": "Base loyality.",
+						"value": 50,
+						"finite": false,
+						"duration": 0
+					}
+				]
+			},
+			"power": {
+				"powerModifiers": [
+					{
+						"id": "base",
+						"shortText": "Base power.",
+						"longText": "Base power.",
+						"value": 50,
+						"finite": false,
+						"duration": 0
+					}
+				]
+			}
+		}
+	]
+}

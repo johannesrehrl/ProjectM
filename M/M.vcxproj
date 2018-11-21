@@ -141,6 +141,7 @@
     <ClCompile Include="Flag.cpp" />
     <ClCompile Include="FlagManager.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameSetupLoader.cpp" />
     <ClCompile Include="Government.cpp" />
     <ClCompile Include="InfluenceResource.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -178,6 +179,7 @@
     <ClInclude Include="Flag.h" />
     <ClInclude Include="FlagManager.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameSetupLoader.h" />
     <ClInclude Include="GameState.h" />
     <ClInclude Include="Government.h" />
     <ClInclude Include="InfluenceResource.h" />
@@ -188,6 +190,7 @@
     <ClInclude Include="MainViewState.h" />
     <ClInclude Include="MenuItem.h" />
     <ClInclude Include="Minister.h" />
+    <ClInclude Include="MinisterManager.h" />
     <ClInclude Include="Ministry.h" />
     <ClInclude Include="MinistryCard.h" />
     <ClInclude Include="Modifier.h" />

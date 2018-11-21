@@ -8,6 +8,7 @@
 #include "TextInputField.h"
 #include "Modifier.h"
 #include "Button.h"
+#include "GameSetupLoader.h"
 
 class SetupState : public GameState
 {
@@ -16,6 +17,8 @@ private:
 	std::shared_ptr<Window> window;
 	std::shared_ptr<AssetsHandler> assetsHandler;
 	std::shared_ptr<PlayState> playState;
+
+	std::shared_ptr<GameSetupLoader> gameSetupLoader;
 
 	sf::Text inputLabelText;
 	sf::Text signatureText;

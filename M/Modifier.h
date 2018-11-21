@@ -20,6 +20,10 @@ public:
 	{
 		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = true; this->duration = duration;
 	}
+	Modifier(std::string id, std::string shortText, std::string longText, float value, bool finite, int duration)
+	{
+		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = finite; this->duration = duration;
+	}
 	~Modifier() {}
 
 	void setId(std::string val) { this->id = val; }

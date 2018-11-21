@@ -15,12 +15,13 @@ private:
 	std::string id;
 	std::string name;
 	int age;
+	bool available;
 
 	std::shared_ptr<AbstractLoyality> loyality;
 	std::shared_ptr<AbstractPower> power;
 
 public:
-	Minister(std::string id, std::string name, int age, std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
+	Minister(std::string id, std::string name, int age, bool available, std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~Minister();
 	void updateEndTurn();
 
@@ -31,6 +32,8 @@ public:
 	std::string getId() { return this->id; }
 	std::string getName() { return this->name; }
 	int getAge() { return this->age; }
+	bool isAvailable() { return this->available; }
+	void setAvailable(bool val) { this->available = val; }
 
 	std::shared_ptr<AbstractLoyality> getLoyality() { return loyality; }
 	std::shared_ptr<AbstractPower> getPower() { return power; }

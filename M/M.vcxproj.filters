@@ -121,18 +121,6 @@
     <Filter Include="src\loading">
       <UniqueIdentifier>{e11ee0c6-fd02-4334-8c2b-a6784ac15cbb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\loading\flag loader">
-      <UniqueIdentifier>{5edb2c3d-88ad-4488-bbbe-fcece3c9949c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\loading\event loader">
-      <UniqueIdentifier>{e1729658-6388-460a-bac6-c28565a5ff2f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\loading\minister loader">
-      <UniqueIdentifier>{d961881b-83e7-4d65-92e6-73c251f690de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\loading\government loader">
-      <UniqueIdentifier>{ac9bdfbe-de22-4811-a7ba-0c0b55923a40}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\game\event manager">
       <UniqueIdentifier>{69606243-78ff-4783-8fd8-8da1295dd145}</UniqueIdentifier>
     </Filter>
@@ -245,6 +233,9 @@
     </ClCompile>
     <ClCompile Include="Event.cpp">
       <Filter>src\game\event manager\event</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSetupLoader.cpp">
+      <Filter>src\loading</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -361,6 +352,12 @@
     </ClInclude>
     <ClInclude Include="Event.h">
       <Filter>src\game\event manager\event</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSetupLoader.h">
+      <Filter>src\loading</Filter>
+    </ClInclude>
+    <ClInclude Include="MinisterManager.h">
+      <Filter>src\game\government\ministries\Minister</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
