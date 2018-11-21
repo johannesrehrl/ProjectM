@@ -1,5 +1,0 @@
-{
-"age":652,
-"available":true,
-"id":"dieter_arfeld",
-"loyality":{"loyalityModifiers":[{"duration":0,"finite":false,"id":"base","longText":"Base loyality.","shortText":"Base loyality.","value":50}]},"name":"Dieter Arfeld","power":{"powerModifiers":[{"duration":0,"finite":false,"id":"base","longText":"Base power.","shortText":"Base power.","value":50}]}}

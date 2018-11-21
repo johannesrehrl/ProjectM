@@ -127,6 +127,9 @@
     <Filter Include="src\game\event manager\event">
       <UniqueIdentifier>{5b7b8b81-363c-4daa-b4fc-94d9e64912fc}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game\event manager\result">
+      <UniqueIdentifier>{5a40b9a6-0922-4fbb-aa01-109fad6fa91e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -236,6 +239,9 @@
     </ClCompile>
     <ClCompile Include="GameSetupLoader.cpp">
       <Filter>src\loading</Filter>
+    </ClCompile>
+    <ClCompile Include="Result.cpp">
+      <Filter>src\game\event manager\result</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -358,6 +364,9 @@
     </ClInclude>
     <ClInclude Include="MinisterManager.h">
       <Filter>src\game\government\ministries\Minister</Filter>
+    </ClInclude>
+    <ClInclude Include="Result.h">
+      <Filter>src\game\event manager\result</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
