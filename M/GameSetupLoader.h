@@ -18,4 +18,5 @@ public:
 
 	void load(); 
 	void loadMinisters();
+	void loadEvents();
 };

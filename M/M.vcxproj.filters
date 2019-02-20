@@ -124,11 +124,8 @@
     <Filter Include="src\game\event manager">
       <UniqueIdentifier>{69606243-78ff-4783-8fd8-8da1295dd145}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\game\event manager\event">
-      <UniqueIdentifier>{5b7b8b81-363c-4daa-b4fc-94d9e64912fc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\game\event manager\result">
-      <UniqueIdentifier>{5a40b9a6-0922-4fbb-aa01-109fad6fa91e}</UniqueIdentifier>
+    <Filter Include="src\game\event manager\game event">
+      <UniqueIdentifier>{d73a0499-c55c-4ff3-b6c4-834ce2c0a9b2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -234,14 +231,11 @@
     <ClCompile Include="EventManager.cpp">
       <Filter>src\game\event manager</Filter>
     </ClCompile>
-    <ClCompile Include="Event.cpp">
-      <Filter>src\game\event manager\event</Filter>
-    </ClCompile>
     <ClCompile Include="GameSetupLoader.cpp">
       <Filter>src\loading</Filter>
     </ClCompile>
-    <ClCompile Include="Result.cpp">
-      <Filter>src\game\event manager\result</Filter>
+    <ClCompile Include="GameEvent.cpp">
+      <Filter>src\game\event manager\game event</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -356,17 +350,14 @@
     <ClInclude Include="EventManager.h">
       <Filter>src\game\event manager</Filter>
     </ClInclude>
-    <ClInclude Include="Event.h">
-      <Filter>src\game\event manager\event</Filter>
-    </ClInclude>
     <ClInclude Include="GameSetupLoader.h">
       <Filter>src\loading</Filter>
     </ClInclude>
     <ClInclude Include="MinisterManager.h">
       <Filter>src\game\government\ministries\Minister</Filter>
     </ClInclude>
-    <ClInclude Include="Result.h">
-      <Filter>src\game\event manager\result</Filter>
+    <ClInclude Include="GameEvent.h">
+      <Filter>src\game\event manager\game event</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

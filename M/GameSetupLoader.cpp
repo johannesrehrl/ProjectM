@@ -59,6 +59,20 @@ void GameSetupLoader::loadMinisters()
 	}
 }
 
+void GameSetupLoader::loadEvents()
+{
+	nlohmann::json loadedJson;
+
+	this->loadingStream.open("gamefiles\\data\\events\\events.json");
+	loadedJson = nlohmann::json::parse(loadingStream);
+	this->loadingStream.close();
+
+	for (int i = 0; i < loadedJson["allEvents"].size(); i++)
+	{	
+		
+	}
+}
+
 GameSetupLoader::~GameSetupLoader()
 {
 

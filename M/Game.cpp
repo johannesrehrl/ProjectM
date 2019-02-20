@@ -50,7 +50,8 @@ void Game::checkStateChange()
 {
 	if (this->currentGameState->getStateChange() == "MAINMENU")
 	{
-		this->playState->setStateChange("");
+		this->playState.reset();
+		this->playState = std::make_shared<PlayState>(this->window, this->assetsHandler, this->cursor);
 		this->currentGameState.reset();
 		this->currentGameState = std::make_unique<MainMenuState>(this->settings, this->window, this->assetsHandler);
 	}
@@ -58,7 +59,6 @@ void Game::checkStateChange()
 	else if (this->currentGameState->getStateChange() == "SETUP")
 	{
 		this->currentGameState.reset();
-		this->playState->setStateChange("");
 		this->currentGameState = std::make_unique<SetupState>(this->window, this->assetsHandler, this->playState);
 	}
 

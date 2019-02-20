@@ -2,7 +2,6 @@
 #include "Game.h"
 #include "Settings.h"
 #include "AssetsHandler.h"
-#include <nlohmann\json.hpp>
 #include <fstream>
 
 int main()
