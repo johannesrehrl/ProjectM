@@ -51,19 +51,20 @@ void AbstractLoyality::makeTooltip()
 	{
 		if (this->loyalityModifiers.at(i)->getValue() < 0)
 		{
-			this->myTooltip->addLine(std::to_string((int)this->loyalityModifiers.at(i)->getValue()) + " " +
-				this->loyalityModifiers.at(i)->getShortText());
+			this->myTooltip->addLine(this->loyalityModifiers.at(i)->getShortText() + " "
+				+ std::to_string((int)this->loyalityModifiers.at(i)->getValue()));
 		}
 
 		else
 		{
-			this->myTooltip->addLine("+" + std::to_string((int)this->loyalityModifiers.at(i)->getValue()) + " " +
-				this->loyalityModifiers.at(i)->getShortText());
+			this->myTooltip->addLine(this->loyalityModifiers.at(i)->getShortText() + " +"
+				+ std::to_string((int)this->loyalityModifiers.at(i)->getValue()));
 		}
 
 		if (this->loyalityModifiers.at(i)->isFinite())
 		{
-			this->myTooltip->addLine("Duration: " + std::to_string((int)this->loyalityModifiers.at(i)->getDuration()) + " months.");
+			this->myTooltip->addLine("Duration: " + std::to_string((int)this->loyalityModifiers.at(i)->getDuration()) 
+				+ " months.", 10);
 		}
 	}
 }
