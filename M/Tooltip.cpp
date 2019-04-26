@@ -6,8 +6,8 @@ Tooltip::Tooltip(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> 
 	this->assetsHandler = assetsHandler;
 
 	this->body.setFillColor(this->assetsHandler->getColorHolder()["grey180"]);
-	this->body.setOutlineThickness(-3);
-	this->body.setOutlineColor(this->assetsHandler->getColorHolder()["black"]);
+	this->body.setOutlineThickness(-1);
+	this->body.setOutlineColor(this->assetsHandler->getColorHolder()["grey80"]);
 
 	this->headLineText.setFillColor(this->assetsHandler->getColorHolder()["black"]);
 	this->headLineText.setFont(this->assetsHandler->getFontHolder()["expressway"]);
@@ -22,7 +22,7 @@ void Tooltip::updateTexture()
 	this->tex = std::make_shared<sf::RenderTexture>();
 	this->tex->create(250, 40 + ((this->allLines.size() * 25) + 5));
 	this->body.setSize(sf::Vector2f(250, 40 + ((this->allLines.size() * 25) + 5)));
-	this->body.setOutlineThickness(-3);
+	this->body.setOutlineThickness(-1);
 	this->tex->draw(this->body);
 	this->tex->draw(this->headLineText);
 	for (int i = 0; i < this->allLines.size(); i++)
@@ -38,12 +38,12 @@ void Tooltip::draw()
 	this->window->getWindow()->draw(sprite);
 }
 
-void Tooltip::addLine(std::string lineString)
+void Tooltip::addLine(std::string lineString, int charSize)
 {
 	sf::Text text;
 	text.setFont(this->assetsHandler->getFontHolder()["expressway"]);
 	text.setFillColor(this->assetsHandler->getColorHolder()["black"]);
-	text.setCharacterSize(15);
+	text.setCharacterSize(charSize);
 	text.setString(lineString);
 	text.setPosition(10, 40 + (this->allLines.size() * 25));
 

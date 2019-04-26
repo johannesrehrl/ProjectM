@@ -22,7 +22,7 @@ public:
 	void draw();
 
 	void setHeadLine(std::string headLineString) { this->headLineText.setString(headLineString); this->updateTexture(); }
-	void addLine(std::string lineString);
+	void addLine(std::string lineString, int charSize = 15);
 	void setPosition(sf::Vector2i pos);
 
 	void clearAllLines() { this->allLines.clear(); }

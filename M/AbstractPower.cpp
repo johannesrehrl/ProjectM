@@ -51,19 +51,20 @@ void AbstractPower::makeTooltip()
 	{
 		if (this->powerModifiers.at(i)->getValue() < 0)
 		{
-			this->myTooltip->addLine(std::to_string((int)this->powerModifiers.at(i)->getValue()) + " " +
-				this->powerModifiers.at(i)->getShortText());
+			this->myTooltip->addLine(this->powerModifiers.at(i)->getShortText() + " "
+				+ std::to_string((int)this->powerModifiers.at(i)->getValue()));
 		}
 
 		else
 		{
-			this->myTooltip->addLine("+" + std::to_string((int)this->powerModifiers.at(i)->getValue()) + " " +
-				this->powerModifiers.at(i)->getShortText());
+			this->myTooltip->addLine(this->powerModifiers.at(i)->getShortText() + " +"
+				+ std::to_string((int)this->powerModifiers.at(i)->getValue()));
 		}
 
 		if (this->powerModifiers.at(i)->isFinite())
 		{
-			this->myTooltip->addLine("Duration: " + std::to_string((int)this->powerModifiers.at(i)->getDuration()) + " months.");
+			this->myTooltip->addLine("Duration: " + std::to_string((int)this->powerModifiers.at(i)->getDuration()) 
+				+ " months.", 10);
 		}
 	}
 }

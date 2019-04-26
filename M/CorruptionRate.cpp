@@ -54,19 +54,20 @@ void CorruptionRate::makeTooltip()
 	{
 		if (this->resourceModifier.at(i)->getValue() < 0)
 		{
-			this->myTooltip->addLine(std::to_string((int)this->resourceModifier.at(i)->getValue()) + " " +
-				this->resourceModifier.at(i)->getShortText());
+			this->myTooltip->addLine(this->resourceModifier.at(i)->getShortText() + " " 
+				+ std::to_string((int)this->resourceModifier.at(i)->getValue()));
 		}
 
 		else
 		{
-			this->myTooltip->addLine("+" + std::to_string((int)this->resourceModifier.at(i)->getValue()) + " " +
-				this->resourceModifier.at(i)->getShortText());
+			this->myTooltip->addLine(this->resourceModifier.at(i)->getShortText() + " +" 
+				+ std::to_string((int)this->resourceModifier.at(i)->getValue()));
 		}
 
 		if (this->resourceModifier.at(i)->isFinite())
 		{
-			this->myTooltip->addLine("Duration: " + std::to_string((int)this->resourceModifier.at(i)->getDuration()) + " months.");
+			this->myTooltip->addLine("Duration: " + std::to_string((int)this->resourceModifier.at(i)->getDuration()) 
+				+ " months.", 10);
 		}
 	}
 }
