@@ -65,19 +65,19 @@ void MinistryCard::update(sf::Vector2i mousePos)
 		this->body.setFillColor(this->assetsHandler->getColorHolder()["grey170"]);
 	}
 
-	if (this->corruptionText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	if (this->corruptionText.getGlobalBounds().contains(mousePos.x, mousePos.y) || this->corruptionIconSprite.getGlobalBounds().contains(mousePos.x, mousePos.y))
 	{
 		this->cursor->setTooltip(this->ministry->getCorruptionRate()->getTooltip());
 		this->cursor->setDisplayTooltip(true);
 	}
 
-	if (this->powerText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	if (this->powerText.getGlobalBounds().contains(mousePos.x, mousePos.y) || this->powerIconSprite.getGlobalBounds().contains(mousePos.x, mousePos.y))
 	{
 		this->cursor->setTooltip(this->ministry->getMinister()->getPower()->getTooltip());
 		this->cursor->setDisplayTooltip(true);
 	}
 
-	if (this->loyalityText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	if (this->loyalityText.getGlobalBounds().contains(mousePos.x, mousePos.y) || this->loyalityIconSprite.getGlobalBounds().contains(mousePos.x, mousePos.y))
 	{
 		this->cursor->setTooltip(this->ministry->getMinister()->getLoyality()->getTooltip());
 		this->cursor->setDisplayTooltip(true);

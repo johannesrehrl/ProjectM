@@ -12,37 +12,32 @@ Cursor::Cursor(std::shared_ptr<AssetsHandler> assetsHandler)
 
 void Cursor::update()
 {
-	if (displayTooltip)
-	{
-		this->currentTooltip->setPosition(sf::Mouse::getPosition());
-	}
-
-	this->displayTooltip = false;
-
 	if (this->assetsHandler->getActionMap().isActive("mouseMoved"))
 	{
-		this->stopWatch.reset();
+		//this->stopWatch.reset();
+		this->displayTooltip = false;
 	}
 
-	this->stopWatch.stop();
+	//this->stopWatch.stop();
 
-	if (this->stopWatch.getElapsedTime().asSeconds() >= 0.25)
-	{
-		this->enoughTimeElapsed = true;
-	}
+	//if (this->stopWatch.getElapsedTime().asSeconds() >= 0.25)
+	//{
+	//	this->enoughTimeElapsed = true;
+	//}
 
-	else if (!this->displayTooltip)
-	{
-		this->enoughTimeElapsed = false;
-	}
+	//else
+	//{
+	//	this->enoughTimeElapsed = false;
+	//}
 
-	this->stopWatch.start();
+	//this->stopWatch.start();
 }
 
 void Cursor::draw()
 {
-	if (displayTooltip && enoughTimeElapsed)
+	if (displayTooltip /*&& enoughTimeElapsed*/)
 	{
+		this->currentTooltip->setPosition(sf::Mouse::getPosition());
 		this->currentTooltip->draw();
 	}
 }

@@ -33,6 +33,7 @@ void Tooltip::updateTexture()
 	this->sprite.setTexture(this->tex->getTexture(), true);
 }
 
+
 void Tooltip::draw()
 {
 	this->window->getWindow()->draw(sprite);

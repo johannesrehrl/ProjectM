@@ -62,13 +62,13 @@ MainStatisticsContainer::MainStatisticsContainer(std::shared_ptr<Window> window,
 
 void MainStatisticsContainer::update(sf::Vector2i mousePos)
 {
-	if (this->influenceText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	if (this->influenceText.getGlobalBounds().contains(mousePos.x, mousePos.y) || this->influenceSprite.getGlobalBounds().contains(mousePos.x, mousePos.y))
 	{
 		this->cursor->setTooltip(this->resourceManager->getInfluenceResource()->getTooltip());
 		this->cursor->setDisplayTooltip(true);
 	}
 
-	if (this->stabilityText.getGlobalBounds().contains(mousePos.x, mousePos.y))
+	else if (this->stabilityText.getGlobalBounds().contains(mousePos.x, mousePos.y) || this->stabilitySprite.getGlobalBounds().contains(mousePos.x, mousePos.y))
 	{
 		this->cursor->setTooltip(this->resourceManager->getNationalStability()->getTooltip());
 		this->cursor->setDisplayTooltip(true);

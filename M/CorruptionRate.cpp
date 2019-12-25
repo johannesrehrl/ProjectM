@@ -52,16 +52,19 @@ void CorruptionRate::makeTooltip()
 
 	for (int i = 0; i < this->resourceModifier.size(); i++)
 	{
+		std::string val = std::to_string((float)this->resourceModifier.at(i)->getValue());
+		std::string useVal = val.substr(0, val.length() - 4);
+
 		if (this->resourceModifier.at(i)->getValue() < 0)
 		{
 			this->myTooltip->addLine(this->resourceModifier.at(i)->getShortText() + " " 
-				+ std::to_string((int)this->resourceModifier.at(i)->getValue()));
+				+ useVal);
 		}
 
 		else
 		{
 			this->myTooltip->addLine(this->resourceModifier.at(i)->getShortText() + " +" 
-				+ std::to_string((int)this->resourceModifier.at(i)->getValue()));
+				+ useVal);
 		}
 
 		if (this->resourceModifier.at(i)->isFinite())

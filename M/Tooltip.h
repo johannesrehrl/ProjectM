@@ -15,6 +15,10 @@ private:
 	std::vector<sf::Text> allLines;
 	std::shared_ptr<sf::RenderTexture> tex;
 
+	// Might use later:
+	//std::vector<std::shared_ptr<sf::Text>> textHooks;
+	//std::vector<std::shared_ptr<sf::Sprite>> spriteHooks;
+
 public:
 	Tooltip(std::shared_ptr<Window> window, std::shared_ptr<AssetsHandler> assetsHandler);
 	~Tooltip();

@@ -7,20 +7,20 @@ private:
 	std::string id;
 	std::string shortText;
 	std::string longText;
-	float value;
+	double value;
 	bool finite;
 	int duration;
 
 public:
-	Modifier(std::string id, std::string shortText, std::string longText, float value)
+	Modifier(std::string id, std::string shortText, std::string longText, double value)
 	{
 		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = false; this->duration = 0;
 	}
-	Modifier(std::string id, std::string shortText, std::string longText, float value, int duration)
+	Modifier(std::string id, std::string shortText, std::string longText, double value, int duration)
 	{
 		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = true; this->duration = duration;
 	}
-	Modifier(std::string id, std::string shortText, std::string longText, float value, bool finite, int duration)
+	Modifier(std::string id, std::string shortText, std::string longText, double value, bool finite, int duration)
 	{
 		this->id = id; this->shortText = shortText; this->longText = longText; this->value = value; this->finite = finite; this->duration = duration;
 	}
@@ -36,7 +36,7 @@ public:
 	std::string getId() { return this->id; }
 	std::string getShortText() { return this->shortText; }
 	std::string getLongText() { return this->longText; }
-	float getValue() { return this->value; }
+	double getValue() { return this->value; }
 	bool isFinite() { return this->finite; }
 	int getDuration() { return this->duration; }
 };
